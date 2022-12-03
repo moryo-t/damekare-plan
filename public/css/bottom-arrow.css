@@ -1,0 +1,12 @@
+.triangle-bottom {
+    display: inline-block;
+    border-style: solid;
+    border-width: 10px 8px 0 8px;
+    border-color: #BFB7E1 transparent transparent transparent;
+}
+.set-start {
+    background-color: rgb(137,234,255, .8);
+}
+.set-end {
+    background-color: rgb(249,127,192, .8);
+}
