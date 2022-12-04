@@ -209,9 +209,7 @@ label {
     background-color: rgb(22,78,166, .3);
     border-radius: 50%;
 }
-#duration {
-    
-}
+
 
 @media screen and (max-width: 800px) {
 	main {
@@ -263,13 +261,13 @@ label {
         left: 0;
         right: 0;
         margin: 0;
-        height: 770px;
+        height: 80%;
         z-index: 2;
         background: #fff;
         transition-duration: .5s;
     }
     main.close {
-        bottom: -640px;
+        bottom: -70%;
         left: 0;
         right: 0;
         transition-duration: .5s;
@@ -309,5 +307,22 @@ label {
         position: absolute;
         top: auto;
         left: auto;
+    }
+
+    label {
+        font-size: .7rem;
+    }
+    .data-spot {
+        font-size: .8rem;
+    }
+    input {
+        height: 30px;
+    }
+
+    .small-phone {
+        display: flex;
+    }
+    .small-phone > div {
+        margin: 0 5px;
     }
 }

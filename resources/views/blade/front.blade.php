@@ -9,7 +9,10 @@
 @section('main')
     <div class="container-fluid px-0">
         <img src="{{ asset('img/untidymen.jpg') }}" alt="" class="img-fluid">
-        <h3 class="text-center py-5 purpose my-5">ダメ彼氏・ダメンズに送るデート作成を目的としたサイトです</h3>
+        <div class="text-center py-5 purpose my-5 px-sm-0 px-3">
+            <h3>デートプランの立て方が分からないダメンズ集合！！</h3>
+            <div>ダメ彼氏・ダメンズに送るデート作成を目的としたサイトです</div>
+        </div>
     </div>
     <div class="container container-fluid-md">
         <div class="row d-flex justify-content-between px-3 px-md-0">

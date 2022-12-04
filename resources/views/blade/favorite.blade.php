@@ -21,19 +21,19 @@
                         <h5>{{ $item->title }}</h5>
                         <div class="d-flex flex-wrap">
                             <div>{{ $item->getStart() }}</div>
-                            @if(!empty($item->getPlace1()))
+                            @if(!empty($item->place1))
                                 <div class="arrow arrow-obj">{{ $item->getPlace1() }}</div>
                             @endif
-                            @if(!empty($item->getPlace2()))
+                            @if(!empty($item->place2))
                                 <div class="arrow arrow-obj">{{ $item->getPlace2() }}</div>
                             @endif
-                            @if(!empty($item->getPlace3()))
+                            @if(!empty($item->place3))
                                 <div class="arrow arrow-obj">{{ $item->getPlace3() }}</div>
                             @endif
-                            @if(!empty($item->getPlace4()))
+                            @if(!empty($item->place4))
                                 <div class="arrow arrow-obj">{{ $item->getPlace4() }}</div>
                             @endif
-                            @if(!empty($item->getPlace5()))
+                            @if(!empty($item->place5))
                                 <div class="arrow arrow-obj">{{ $item->getPlace5() }}</div>
                             @endif
                             <div class="arrow arrow-obj">{{ $item->getEnd() }}</div>

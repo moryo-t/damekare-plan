@@ -61,23 +61,25 @@
             </div>
         @endforeach
 
-        <div class="mt-2 d-grid w-100">
-            @if(Auth::check())
-                <button type="button"
-                class="btn btn-outline-danger"
-                id="submit_favorite">オキニ登録</button>
-            @else
-                <a href="/login" class="btn btn-outline-danger">オキニ登録</a>
-            @endif
-        </div>
-        <div class="mt-2 d-grid w-100">
-            @if(Auth::check())
-                <button type="button"
-                class="btn btn-outline-primary"
-                id="submit_plan">プラン投稿</button>
-            @else
-                <a href="/login" class="btn btn-outline-primary">プラン投稿</a>
-            @endif
+        <div class="w-100 small-phone">
+            <div class="mt-2 d-grid w-100">
+                @if(Auth::check())
+                    <button type="button"
+                    class="btn btn-outline-danger"
+                    id="submit_favorite">オキニ登録</button>
+                @else
+                    <a href="/login" class="btn btn-outline-danger">オキニ登録</a>
+                @endif
+            </div>
+            <div class="mt-2 d-grid w-100">
+                @if(Auth::check())
+                    <button type="button"
+                    class="btn btn-outline-primary"
+                    id="submit_plan">プラン投稿</button>
+                @else
+                    <a href="/login" class="btn btn-outline-primary">プラン投稿</a>
+                @endif
+            </div>    
         </div>
     </form>
     <div class="d-flex justify-content-between">
