@@ -2,7 +2,7 @@
     <div class="d-flex justify-content-between mt-2">
         <div class="d-flex">
             <div class="logo-damekare py-1">
-                <a href=""><img src="{{ asset('img/main-logo.png') }}" alt="" width="130px"></a>
+                <a href="/"><img src="{{ asset('img/main-logo.png') }}" alt="" width="130px"></a>
             </div>
             <div class="d-flex align-items-center">
                 <div class="icon-menu p-1" id="drive"><img src="{{ asset('img/car.png') }}" alt="" width="24"></div>

@@ -19,7 +19,7 @@
             <div class="col-12 col-md-3 border rounded p-3 mb-md-0 mb-3">
                 <h3 class="mb-3">プラン設計</h3>
                 <div class="mb-3">
-                    <img src="{{ asset('img/undraw_by_the_road_re_vvs7.svg') }}" alt="" width="100%">
+                    <a href="/map"><img src="{{ asset('img/undraw_by_the_road_re_vvs7.svg') }}" alt="" width="100%"></a>
                 </div>
                 <div>Google Maps API を利用してプランの設計ができます。</div>
             </div>
@@ -33,7 +33,7 @@
             <div class="col-12 col-md-3 border rounded p-3 mb-md-0 mb-3">
                 <h3 class="mb-3">プラン検索</h3>
                 <div class="mb-3">
-                    <img src="{{ asset('img/undraw_search_re_x5gq.svg') }}" alt="" width="100%">
+                    <a href="/search"><img src="{{ asset('img/undraw_search_re_x5gq.svg') }}" alt="" width="100%"></a>
                 </div>
                 <div>他ユーザーが投稿したプランを閲覧することができます。</div>
             </div>
@@ -45,17 +45,17 @@
     <div class="containre-fluid">
         <h3 class="text-center py-5 lecture my-5">ダメかれプランの使い方</h3>
     </div>
-    <div class="container mb-5">
+    <div class="container mb-5 usage">
         <div class="mb-4">
-            <h3>プラン設計</h3>
+            <h4>プラン設計</h4>
             <div>「<a href="/map">プラン設計</a>」から「集合場所」「終着場所」を入力する。他の「場所1」「場所2」「場所3」「場所4」「場所5」は「集合場所」から「終着場所」までに行きたい場所がある場合に入力する。<br>※初めに入力した住所から半径10km以内の場所を優先的に候補として出力します。<br>※デフォルトでは、車でのルート案内になっています。</div>    
         </div>
         <div class="mb-4">
-            <h3>オキニ登録・プラン投稿</h3>
-            <div>プラン設計が完了いたしましたら、「オキニ登録」または「プラン投稿」から作成したプランをお気に入り登録及び、プランの投稿ができます。</div>    
+            <h4>オキニ登録・プラン投稿</h4>
+            <div>プラン設計が完了いたしましたら、「オキニ登録」または「プラン投稿」から作成したプランをお気に入り登録及び、プランの投稿することができます。</div>    
         </div>
         <div class="mb-4">
-            <h3>プラン検索</h4>
+            <h4>プラン検索</h4>
             <div>「<a href="/search">プラン検索</a>」の入力欄にプラン検索したいエリアを入力すると、他ユーザーが投稿したプランを物色することができます。</div>
         </div>
     </div>
