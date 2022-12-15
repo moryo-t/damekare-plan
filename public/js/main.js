@@ -25,7 +25,7 @@ if(buttonFavorite) {
             var form = document.getElementById('favorite_register');
             var formData = new FormData(form);
             formData.append("title", titleName);
-            xhr.open('POST', 'map/favorite', true);
+            xhr.open('POST', '/map/favorite', true);
             xhr.send(formData);
 
             buttonFavorite.classList.add('favorite_on');
@@ -54,7 +54,7 @@ if(buttonPlan) {
             var form = document.getElementById('favorite_register');
             var formData = new FormData(form);
             formData.append("title", titleName);
-            xhr.open('POST', 'map/plan', true);
+            xhr.open('POST', '/map/plan', true);
             xhr.send(formData);
 
             buttonPlan.classList.add('plan_on');
