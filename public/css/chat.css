@@ -1,0 +1,26 @@
+#message_send input {
+    width: 90%;
+}
+#message_send button {
+    width: 10%;
+    min-width: 70px;
+}
+.myself {
+    background-color: #664DEC;
+    color: #fff;
+}
+.partner {
+    background-color: #EFEFEF;
+}
+#route_show span {
+    color: #664DEC;
+}
+.error {
+    color: #FF0000;
+    font-weight: bold;
+    font-size: larger;
+}
+#chat {
+    max-height: 680px;
+    overflow-y: auto;
+}

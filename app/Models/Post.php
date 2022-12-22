@@ -14,6 +14,16 @@ class Post extends Model
         return $this->belongsToMany(User::class);
     }
 
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function chats()
+    {
+        return $this->hasMany(Chat::class);
+    }
+
     public function getStart()
     {
         $start = $this->start;
@@ -28,7 +38,7 @@ class Post extends Model
         if(mb_strpos($start, "日本", $purposeCount) !== false) {
             $searchCount = mb_strpos($start, ",");
             $delateResult = mb_substr($start, 0, $searchCount);
-            return $delateResult;    
+            return $delateResult;
         }
 
         return $start;

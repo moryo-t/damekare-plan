@@ -4,6 +4,7 @@
 
 <head>
     <link rel="stylesheet" href="{{ asset('css/bottom-arrow.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/chat.css') }}">
 </head>
 
 @section('header')
@@ -61,11 +62,79 @@
                 <div class="border rounded p-3 set-end">{{ $item->end }}</div>
             </div>
 
-            <div class="text-end mt-2" id="route_show">
-                <a href="/search/{{ $item->id }}/route">
-                    <div class="d-inline">このプランのルート</div>
-                </a>
-            </div>    
+            <div class="d-flex justify-content-between mt-2" id="route_show">
+                <div>
+                    <span>{{ $item->user->name }}</span> さんが投稿したプラン
+                </div>
+                <div>
+                    <a href="/search/{{ $item->id }}/route">
+                        <div class="d-inline">このプランのルート</div>
+                    </a>    
+                </div>
+            </div>
+
+            <div class="my-5">
+                <h4>質問</h4>
+                <div id="chat" class="border rounded p-3">
+                    <ul class="list-unstyled">
+                        @auth
+                            @foreach ($item->chats as $chat)
+                                @if (Auth::id() === $chat->user_id)
+                                    <li class="d-flex justify-content-end">
+                                        <div class="d-flex flex-column">
+                                            <div class="d-inline-block text-end">{{ $chat->timeStamp() }} {{ $chat->user->name }}</div>
+                                            <div class="d-flex justify-content-end">
+                                                <div class="d-inline-block border rounded p-2 myself">{{ $chat->message }}</div>    
+                                            </div>
+                                        </div>
+                                    </li>
+                                @else
+                                    <li class="d-flex">
+                                        <div class="d-flex flex-column">
+                                            <div class="d-inline-block">{{ $chat->timeStamp() }} {{ $chat->user->name }}</div>
+                                            <div>
+                                                <div class="d-inline-block border rounded p-2 partner me-0">{{ $chat->message }}</div>    
+                                            </div>
+                                        </div>
+                                    </li>
+                                @endif
+                            @endforeach
+                        @endauth
+
+                        @guest
+                            @foreach ($item->chats as $chat)
+                                <li class="d-flex mb-3">
+                                    <div class="d-flex flex-column">
+                                        <div class="d-inline-block">{{ $chat->timeStamp() }} {{ $chat->user->name }}</div>
+                                        <div>
+                                            <div class="d-inline-block border rounded p-2 partner">{{ $chat->message }}</div>    
+                                        </div>
+                                    </div>
+                                </li>
+                            @endforeach
+                        @endguest
+                    </ul>    
+                </div>
+
+                <form action="/message/{{ $item->id }}" method="POST" id="message_send" class="mb-0">
+                    @csrf
+                    <div class="d-flex pt-3">
+                        @auth
+                            <input type="text" name="message" class="form-control" placeholder="メッセージを入力">
+                        @endauth
+                        @guest
+                            <input type="text" name="message" class="form-control" placeholder="チャット機能を使用するにはログインする必要があります。" disabled="disabled">
+                        @endguest
+                        <button type="submit" class="btn btn-primary ms-2">送信</button>    
+                    </div>
+                </form>
+                @error ('message')
+                    <div class="error">
+                        {{ $message }}
+                    </div>
+                @enderror
+            </div>
+
         @endforeach
     </div>
 

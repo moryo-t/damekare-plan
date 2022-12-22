@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\ChatRequest;
 use App\Models\Post;
+use App\Models\Chat;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class SearchController extends Controller
 {
@@ -29,7 +33,22 @@ class SearchController extends Controller
     public function detail($id)
     {
         $id = $id;
-        $items = Post::where('id', $id)->get();
+        $items = Post::with('chats')->where('id', $id)->get();
         return view('blade.search-detail', ['items' => $items]);
     }
+
+    public function chat($id, ChatRequest $request)
+    {
+        $chat = new Chat;
+        $post = $id;
+        $user = Auth::id();
+        $message = $request->message;
+        $chat->fill([
+            'post_id' => $post,
+            'user_id' => $user,
+            'message' => $message,
+        ])->save();
+        return redirect()->route('updatePage', ['id' => $post]);
+    }
+
 }
