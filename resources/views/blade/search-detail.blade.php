@@ -76,7 +76,7 @@
             <div class="my-5">
                 <h4>質問</h4>
                 <div id="chat" class="border rounded p-3">
-                    <ul class="list-unstyled">
+                    <ul class="list-unstyled" id="bottom_scroll">
                         @auth
                             @foreach ($item->chats as $chat)
                                 @if (Auth::id() === $chat->user_id)
@@ -121,11 +121,12 @@
                     <div class="d-flex pt-3">
                         @auth
                             <input type="text" name="message" class="form-control" placeholder="メッセージを入力">
+                            <button type="submit" class="btn btn-primary ms-2">送信</button>    
                         @endauth
                         @guest
                             <input type="text" name="message" class="form-control" placeholder="チャット機能を使用するにはログインする必要があります。" disabled="disabled">
+                            <button type="submit" class="btn btn-primary ms-2" disabled>送信</button>    
                         @endguest
-                        <button type="submit" class="btn btn-primary ms-2">送信</button>    
                     </div>
                 </form>
                 @error ('message')
@@ -138,4 +139,8 @@
         @endforeach
     </div>
 
+@endsection
+
+@section('script')
+    <script src="{{ asset('js/chat.js') }}" defer></script>
 @endsection

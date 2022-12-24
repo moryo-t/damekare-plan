@@ -22,5 +22,6 @@
 }
 #chat {
     max-height: 680px;
+    min-height: 300px;
     overflow-y: auto;
 }
