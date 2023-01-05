@@ -5,6 +5,7 @@
 <head>
     <link rel="stylesheet" href="{{ asset('css/bottom-arrow.css') }}">
     <link rel="stylesheet" href="{{ asset('css/chat.css') }}">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
 
 @section('header')
@@ -18,7 +19,7 @@
                 <h4>{{ $item->title }}</h4>
             </div>
             <div>
-                <div>集合場所</div>
+                <div>始発場所</div>
                 <div class="border rounded p-3 set-start">{{ $item->start }}</div>
                 <div class="w-100 text-center my-2">
                     <div class="triangle-bottom"></div>
@@ -81,7 +82,7 @@
                             @foreach ($item->chats as $chat)
                                 @if (Auth::id() === $chat->user_id)
                                     <li class="d-flex justify-content-end">
-                                        <div class="d-flex flex-column">
+                                        <div class="d-flex flex-column w-75">
                                             <div class="d-inline-block text-end">{{ $chat->timeStamp() }} {{ $chat->user->name }}</div>
                                             <div class="d-flex justify-content-end">
                                                 <div class="d-inline-block border rounded p-2 myself">{{ $chat->message }}</div>    
@@ -90,7 +91,7 @@
                                     </li>
                                 @else
                                     <li class="d-flex">
-                                        <div class="d-flex flex-column">
+                                        <div class="d-flex flex-column w-75">
                                             <div class="d-inline-block">{{ $chat->timeStamp() }} {{ $chat->user->name }}</div>
                                             <div>
                                                 <div class="d-inline-block border rounded p-2 partner me-0">{{ $chat->message }}</div>    
@@ -116,12 +117,12 @@
                     </ul>    
                 </div>
 
-                <form action="/message/{{ $item->id }}" method="POST" id="message_send" class="mb-0">
+                <form id="message_send" class="mb-0" onsubmit="return false;">
                     @csrf
                     <div class="d-flex pt-3">
                         @auth
-                            <input type="text" name="message" class="form-control" placeholder="メッセージを入力">
-                            <button type="submit" class="btn btn-primary ms-2">送信</button>    
+                            <input type="text" name="message" class="form-control" placeholder="メッセージを入力" id="text_input">
+                            <button type="button" class="btn btn-primary ms-2" id="message_submit">送信</button>    
                         @endauth
                         @guest
                             <input type="text" name="message" class="form-control" placeholder="チャット機能を使用するにはログインする必要があります。" disabled="disabled">
@@ -143,4 +144,5 @@
 
 @section('script')
     <script src="{{ asset('js/chat.js') }}" defer></script>
+    <script src="{{ asset('js/chat-ajax.js') }}" defer></script>
 @endsection

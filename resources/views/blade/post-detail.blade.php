@@ -21,7 +21,7 @@
                 </form>
             </div>
             <div>
-                <div>集合場所</div>
+                <div>始発場所</div>
                 <div class="border rounded p-3 set-start">{{ $item->start }}</div>
                 <div class="w-100 text-center my-2">
                     <div class="triangle-bottom"></div>

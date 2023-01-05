@@ -17,6 +17,6 @@ class Chat extends Model
     {
         $time = $this->created_at;
         $minNot = date('Y-n-j G:i', strtotime($time));
-        return $minNot;    
+        return $minNot;
     }
 }

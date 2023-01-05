@@ -31,7 +31,7 @@ Route::get('favorite/destroy/{id}', 'App\Http\Controllers\FavoriteController@des
 
 Route::get('/search', 'App\Http\Controllers\SearchController@index');
 Route::post('/search', 'App\Http\Controllers\SearchController@show');
-Route::get('/search/{id}', 'App\Http\Controllers\SearchController@detail')->name('updatePage');
+Route::get('/search/detail', 'App\Http\Controllers\SearchController@detail')->name('updatePage');
 Route::post('/message/{id}', 'App\Http\Controllers\SearchController@chat');
 
 Route::get('/search/{id}/route', 'App\Http\Controllers\RouteController@search_route');

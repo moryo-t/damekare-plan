@@ -12,7 +12,7 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
-    .js('resources/js/jquery.js', 'public/js')
+    .js('resources/js/chat-ajax.js', 'public/js')
 .autoload( { //追加ここから
     "jquery": [ '$', 'window.jQuery' ],
 } )//追加ここまで

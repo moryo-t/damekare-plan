@@ -27,7 +27,7 @@
     <form class="plan-search my-2 d-flex flex-column align-items-center" method="POST" id="favorite_register" >
         @csrf
         <div class="mb-1 w-100">
-            <label for="">集合場所</label>
+            <label for="">始発場所</label>
             <input type="text" class="form-control" placeholder="集合場所を入力" name="start" id="pac-input-start">
         </div>
         <div class="w-100">

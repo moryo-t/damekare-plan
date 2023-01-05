@@ -16,7 +16,7 @@
         <ul class="list-group">
             @foreach($posts as $post)
                 @csrf
-                <a href="/search/{{ $post->id }}">
+                <a href="/search/detail?id={{ $post->id }}">
                     <li class="list-group-item">
                         <h5>{{ $post->title }}</h5>
                         <div class="d-flex flex-wrap">
