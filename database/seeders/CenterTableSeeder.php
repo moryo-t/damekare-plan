@@ -16,7 +16,7 @@ class CenterTableSeeder extends Seeder
     {
         $param = [
             'user_id' => '1',
-            'post_id' => '3',
+            'post_id' => '2',
         ];
 
 

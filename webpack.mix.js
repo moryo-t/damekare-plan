@@ -13,6 +13,10 @@ const mix = require('laravel-mix');
 
 mix.js('resources/js/app.js', 'public/js')
     .js('resources/js/chat-ajax.js', 'public/js')
+    .js('resources/js/favorite-ajax.js', 'public/js')
+    .js('resources/js/bookmark-ajax.js', 'public/js')
+    .js('resources/js/edit-title.js', 'public/js')
+    .js('resources/js/quit-ajax.js', 'public/js')
 .autoload( { //追加ここから
     "jquery": [ '$', 'window.jQuery' ],
 } )//追加ここまで

@@ -22,12 +22,4 @@ class RouteController extends Controller
         $items = Favorite::where('id', $id)->get();
         return view('blade.route', ['items' => $items]);
     }
-
-    public function post_route($id)
-    {
-        $user = Auth::id();
-        $id = $id;
-        $items = Post::where('user_id', $user)->where('id', $id)->get();
-        return view('blade.route', ['items' => $items]);
-    }
 }

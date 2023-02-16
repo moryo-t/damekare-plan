@@ -20,3 +20,11 @@
     background-position: -100% 0;
     color: #fff;
 }
+
+main {
+    padding-top: 55px;
+}
+
+#app {
+    z-index: 2;
+}

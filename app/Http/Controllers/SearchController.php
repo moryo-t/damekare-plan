@@ -5,9 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\ChatRequest;
 use App\Models\Post;
+use App\Models\User;
 use App\Models\Chat;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Log;
 
 class SearchController extends Controller
 {
@@ -37,6 +37,37 @@ class SearchController extends Controller
         return view('blade.search-detail', ['items' => $items]);
     }
 
+    public function edit_title($id, Request $request)
+    {
+        $id = $id;
+        $edit_title = $request->edit_title;
+        Post::where('id', $id)->update([
+            'title' => $edit_title,
+        ]);
+        return ['edit_title' => $edit_title];
+    }
+
+    public function destroy(Request $request)
+    {
+        $id = $request->id;
+        Post::where('id', $id)->delete();
+        return redirect('/posts');
+    }
+
+    public function bookmark_add($id)
+    {
+        $user_id = Auth::id();
+        $post_id = $id;
+        User::find($user_id)->posts()->syncWithoutDetaching($post_id);
+    }
+    
+    public function bookmark_destroy($id)
+    {
+        $user_id = Auth::id();
+        $post_id = $id;
+        User::find($user_id)->posts()->detach($post_id);
+    }
+
     public function chat($id, ChatRequest $request)
     {
         $chat = new Chat;
@@ -57,5 +88,4 @@ class SearchController extends Controller
         $dataResponse = ['name' => $user_name, 'time' => $minNot, 'message' => $message];
         return $dataResponse;
     }
-
 }

@@ -3,7 +3,6 @@ $(function(){
         const formData = $('#message_send').serializeArray();
         const url = new URLSearchParams(window.location.search);
         const post_id = url.get('id');
-        console.log(formData);
         $.ajax({
             type: 'POST',
             url: '/message/' + post_id,
@@ -27,9 +26,9 @@ $(function(){
             }
         })
         .fail((XMLHttpRequest, textStatus, errorThrown)=>{
-            console.log("XMLHttpRequest : " + XMLHttpRequest.status);
-            console.log("textStatus     : " + textStatus);
-            console.log("errorThrown    : " + errorThrown.message);
+            //console.log("XMLHttpRequest : " + XMLHttpRequest.status);
+            //console.log("textStatus     : " + textStatus);
+            //console.log("errorThrown    : " + errorThrown.message);
         })
     });
 })

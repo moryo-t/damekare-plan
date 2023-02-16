@@ -10951,39 +10951,53 @@ return jQuery;
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
-/*!***********************************!*\
-  !*** ./resources/js/chat-ajax.js ***!
-  \***********************************/
+/*!************************************!*\
+  !*** ./resources/js/edit-title.js ***!
+  \************************************/
 /* provided dependency */ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 $(function () {
-  $('#message_submit').on('click', function () {
-    var formData = $('#message_send').serializeArray();
+  $("#edit-title-search").on("click", function () {
+    var title = document.getElementById("title").textContent;
+    var result = prompt("プラン名「 " + title + " 」を変更します。", title);
     var url = new URLSearchParams(window.location.search);
     var post_id = url.get('id');
+    if (!result) {
+      return false;
+    }
     $.ajax({
       type: 'POST',
-      url: '/message/' + post_id,
-      dataType: 'json',
-      data: formData,
+      url: "/search/" + post_id + "/title",
+      data: {
+        edit_title: result
+      },
       headers: {
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
       }
     }).done(function (data) {
-      if (formData[1].value == data['message']) {
-        var name = data['name'];
-        var time = data['time'];
-        var message = data['message'];
-        $('#bottom_scroll').append("<li class=\"d-flex justify-content-end\"><div class=\"d-flex flex-column w-75\"><div class=\"d-inline-block text-end\">".concat(time, " ").concat(name, "</div><div class=\"d-flex justify-content-end\"><div class=\"d-inline-block border rounded p-2 myself\">").concat(message, "</div></div></div></li>"));
-        $("#text_input").val("");
-        var ele = document.getElementById('chat');
-        ele.scrollTo(0, ele.scrollHeight);
-      } else {
-        alert("フォームの内容とデータベースの内容が異なっています。");
+      $("#title").html(data['edit_title']);
+      alert("プラン名「 " + title + " 」から「 " + data['edit_title'] + " 」に変更しました！");
+    });
+  });
+  $("#edit-title-favorite").on("click", function () {
+    var title = document.getElementById("title").textContent;
+    var result = prompt("プラン名「 " + title + " 」を変更します。", title);
+    var url = new URLSearchParams(window.location.search);
+    var favorite_id = url.get('id');
+    if (!result) {
+      return false;
+    }
+    $.ajax({
+      type: 'POST',
+      url: "/favorite/" + favorite_id + "/title",
+      data: {
+        edit_title: result
+      },
+      headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
       }
-    }).fail(function (XMLHttpRequest, textStatus, errorThrown) {
-      //console.log("XMLHttpRequest : " + XMLHttpRequest.status);
-      //console.log("textStatus     : " + textStatus);
-      //console.log("errorThrown    : " + errorThrown.message);
+    }).done(function (data) {
+      $("#title").html(data['edit_title']);
+      alert("プラン名「 " + title + " 」から「 " + data['edit_title'] + " 」に変更しました！");
     });
   });
 });

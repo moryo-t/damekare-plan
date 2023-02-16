@@ -12,7 +12,7 @@
 .partner {
     background-color: #EFEFEF;
 }
-#route_show span {
+#route_show span, .purple {
     color: #664DEC;
 }
 .error {

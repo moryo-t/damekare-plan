@@ -13,6 +13,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(FavoriteTableSeeder::class);
+        $this->call(CenterTableSeeder::class);
     }
 }

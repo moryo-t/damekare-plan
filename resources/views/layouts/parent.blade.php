@@ -9,6 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/destyle.css@3.0.2/destyle.css">
     <link href="{{ asset('css/header.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/front.css') }}" rel="stylesheet">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
 <body>
     <header>
@@ -18,5 +19,6 @@
         @yield('main')
     </main>
     @yield('script')
+    <script src="{{ asset('js/quit-ajax.js') }}" defer></script>
 </body>
 </html>

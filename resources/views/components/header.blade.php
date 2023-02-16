@@ -3,7 +3,7 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
 </head>
 
-<div id="app">
+<div id="app" class="position-fixed w-100 top-0">
     <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
         <div class="container">
             <a class="navbar-brand" href="{{ url('/') }}">
@@ -52,12 +52,14 @@
                                 <a class="dropdown-item" href="/map">プラン設計</a>
                                 <a class="dropdown-item" href="/search">プラン検索</a>
                                 <a class="dropdown-item" href="/posts">投稿一覧</a>
+                                <a class="dropdown-item" href="/bookmark">ブックマーク</a>
                                 <a class="dropdown-item" href="/favorite">お気に入り</a>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();">
                                     {{ __('ログアウト') }}
                                 </a>
+                                <a class="dropdown-item" href="javascript:void(0)" id="quit">退会</a>
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                     @csrf

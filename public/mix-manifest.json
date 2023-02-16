@@ -1,5 +1,9 @@
 {
     "/js/app.js": "/js/app.js",
     "/js/chat-ajax.js": "/js/chat-ajax.js",
+    "/js/favorite-ajax.js": "/js/favorite-ajax.js",
+    "/js/bookmark-ajax.js": "/js/bookmark-ajax.js",
+    "/js/edit-title.js": "/js/edit-title.js",
+    "/js/quit-ajax.js": "/js/quit-ajax.js",
     "/css/app.css": "/css/app.css"
 }

@@ -10951,40 +10951,41 @@ return jQuery;
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
-/*!***********************************!*\
-  !*** ./resources/js/chat-ajax.js ***!
-  \***********************************/
+/*!***************************************!*\
+  !*** ./resources/js/favorite-ajax.js ***!
+  \***************************************/
 /* provided dependency */ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 $(function () {
-  $('#message_submit').on('click', function () {
-    var formData = $('#message_send').serializeArray();
-    var url = new URLSearchParams(window.location.search);
-    var post_id = url.get('id');
-    $.ajax({
-      type: 'POST',
-      url: '/message/' + post_id,
-      dataType: 'json',
-      data: formData,
-      headers: {
-        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-      }
-    }).done(function (data) {
-      if (formData[1].value == data['message']) {
-        var name = data['name'];
-        var time = data['time'];
-        var message = data['message'];
-        $('#bottom_scroll').append("<li class=\"d-flex justify-content-end\"><div class=\"d-flex flex-column w-75\"><div class=\"d-inline-block text-end\">".concat(time, " ").concat(name, "</div><div class=\"d-flex justify-content-end\"><div class=\"d-inline-block border rounded p-2 myself\">").concat(message, "</div></div></div></li>"));
-        $("#text_input").val("");
-        var ele = document.getElementById('chat');
-        ele.scrollTo(0, ele.scrollHeight);
+  $("#post_button").on('click', function () {
+    var title = $("#title").text();
+    if (!$("#post_button").hasClass("favorite_post_on")) {
+      if (!confirm('プラン「 ' + title + ' 」を投稿してもよろしいですか？')) {
+        return false;
       } else {
-        alert("フォームの内容とデータベースの内容が異なっています。");
+        postAjax();
+        alert("プラン「 " + title + " 」の投稿が完了いたしました！");
       }
-    }).fail(function (XMLHttpRequest, textStatus, errorThrown) {
-      //console.log("XMLHttpRequest : " + XMLHttpRequest.status);
-      //console.log("textStatus     : " + textStatus);
-      //console.log("errorThrown    : " + errorThrown.message);
-    });
+    } else {
+      alert("プラン「 " + title + " 」は投稿済みです！！！");
+      return false;
+    }
+    function postAjax() {
+      var url = new URLSearchParams(window.location.search);
+      var favorite_id = url.get('id');
+      $.ajax({
+        type: 'POST',
+        url: '/favorite/' + favorite_id + '/post',
+        headers: {
+          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+      }).done(function () {
+        $("#post_button").addClass("favorite_post_on").html("投稿済み");
+      }).fail(function (XMLHttpRequest, textStatus, errorThrown) {
+        //console.log("XMLHttpRequest : " + XMLHttpRequest.status);
+        //console.log("textStatus     : " + textStatus);
+        //console.log("errorThrown    : " + errorThrown.message);
+      });
+    }
   });
 });
 })();

@@ -16,7 +16,7 @@
         <ul class="list-group">
             @foreach($items as $item)
                 @csrf
-                <a href="/favorite/{{ $item->id }}">
+                <a href="/favorite/detail?id={{ $item->id }}">
                     <li class="list-group-item">
                         <h5>{{ $item->title }}</h5>
                         <div class="d-flex flex-wrap">

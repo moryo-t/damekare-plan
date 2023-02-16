@@ -7,10 +7,22 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens, HasFactory, Notifiable, SoftDeletes;
+
+    public function posts()
+    {
+        return $this->belongsToMany(Post::class, 'post_user');
+    }
+
+    public function bookmark($id)
+    {
+        return $this->posts()->where('post_id', $id)->exists();
+    }
+
 
     /**
      * The attributes that are mass assignable.
@@ -44,13 +56,4 @@ class User extends Authenticatable
 
     protected $guarded = ['id'];
 
-    public function posts()
-    {
-        return $this->belongsToMany(Post::class)->using(PostUser::class)->withTimestamps();
-    }
-
-    public function post_id()
-    {
-        
-    }
 }
