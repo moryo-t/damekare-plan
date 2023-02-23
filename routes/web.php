@@ -32,7 +32,7 @@ Route::post('/favorite/{id}/title', 'App\Http\Controllers\FavoriteController@edi
 Route::post('/favorite/{id}/post', 'App\Http\Controllers\FavoriteController@post');
 
 Route::get('/search', 'App\Http\Controllers\SearchController@index');
-Route::post('/search', 'App\Http\Controllers\SearchController@show');
+Route::get('/search/result', 'App\Http\Controllers\SearchController@show');
 Route::get('/search/detail', 'App\Http\Controllers\SearchController@detail')->name('updatePage');
 Route::post('/search/destroy/{id}', 'App\Http\Controllers\SearchController@destroy');
 Route::post('/search/{id}/bookmark', 'App\Http\Controllers\SearchController@bookmark_add');

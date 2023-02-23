@@ -39,8 +39,11 @@
                             <div class="arrow arrow-obj">{{ $post->getEnd() }}</div>
                         </div>
                     </li>
-                </a>    
+                </a>
             @endforeach
+            <div class="mt-5">
+                {{ $posts->links() }}
+            </div>
         </ul>    
     </div>
 @endsection

@@ -12,7 +12,7 @@ class PostController extends Controller
     {
         if(Auth::check()) {
             $id = Auth::id();
-            $items = Post::where('user_id', $id)->get();
+            $items = Post::where('user_id', $id)->paginate(15);
             return view('blade.post', ['items' => $items]);
         } else {
             return redirect('/login');

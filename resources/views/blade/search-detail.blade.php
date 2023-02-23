@@ -51,6 +51,7 @@
                     @endif
                 </div>
             </div>
+            
             <div>
                 <div>始発場所</div>
                 <div class="border rounded p-3 set-start">{{ $item->start }}</div>

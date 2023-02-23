@@ -18,14 +18,16 @@ class SearchController extends Controller
 
     public function show(Request $request)
     {
-        $input = $request->result;
-        $posts = Post::where('start', 'like', '%' . $input . '%')
+        $input = $request->input_result;
+        $posts = Post::where('title', 'like', '%' . $input . '%')
+        ->orWhere('start', 'like', '%' . $input . '%')
         ->orWhere('end', 'like', '%' . $input . '%')
         ->orWhere('place1', 'like', '%' . $input . '%')
         ->orWhere('place2', 'like', '%' . $input . '%')
         ->orWhere('place3', 'like', '%' . $input . '%')
         ->orWhere('place4', 'like', '%' . $input . '%')
-        ->orWhere('place5', 'like', '%' . $input . '%')->get();
+        ->orWhere('place5', 'like', '%' . $input . '%')
+        ->paginate(15);
 
         return view('blade.search-result', ['posts' => $posts, 'input' => $input]);
     }

@@ -13,7 +13,7 @@ class FavoriteController extends Controller
     {
         if(Auth::check()) {
             $id = Auth::id();
-            $items = Favorite::where('user_id', $id)->get();
+            $items = Favorite::where('user_id', $id)->paginate(15);
             return view('blade.favorite', ['items' => $items]);
         } else {
             return redirect('/login');

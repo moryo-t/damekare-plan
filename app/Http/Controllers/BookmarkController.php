@@ -12,7 +12,7 @@ class BookmarkController extends Controller
     {
         if(Auth::check()) {
             $user_id = Auth::id();
-            $items = User::find($user_id)->posts()->get();
+            $items = User::find($user_id)->posts()->paginate(15);
             return view('blade.bookmark', ['items' => $items]);
         } else {
             return redirect('/login');

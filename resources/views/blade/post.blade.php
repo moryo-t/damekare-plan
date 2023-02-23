@@ -41,6 +41,10 @@
                     </li>
                 </a>    
             @endforeach
-        </ul>    
+        </ul>
+        
+        <div class="mt-2">
+            {{ $items->links() }}
+        </div> 
     </div>
 @endsection
