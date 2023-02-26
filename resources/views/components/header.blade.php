@@ -24,10 +24,10 @@
                     <!-- Authentication Links -->
                     @if(!Auth::check())
                         <li class="nav-item">
-                            <a class="nav-link" href="/map">{{ __('プラン設計') }}</a>
+                            <a class="nav-link" href="/map">{{ __('プランを設計') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/search">{{ __('プラン検索') }}</a>
+                            <a class="nav-link" href="/search">{{ __('プランを探す') }}</a>
                         </li>
                     @endif
                     @guest
@@ -49,11 +49,12 @@
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="/map">プラン設計</a>
-                                <a class="dropdown-item" href="/search">プラン検索</a>
-                                <a class="dropdown-item" href="/posts">投稿一覧</a>
+                                <a class="dropdown-item" href="/map">プランを設計</a>
+                                <a class="dropdown-item" href="/search">プランを探す</a>
+                                <a class="dropdown-item" href="/">使い方</a>
                                 <a class="dropdown-item" href="/bookmark">ブックマーク</a>
-                                <a class="dropdown-item" href="/favorite">お気に入り</a>
+                                <a class="dropdown-item" href="/favorite">保存したプラン</a>
+                                <a class="dropdown-item" href="/posts">投稿を一覧</a>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();">

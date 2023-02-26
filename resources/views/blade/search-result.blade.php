@@ -41,7 +41,7 @@
                     </li>
                 </a>
             @endforeach
-            <div class="mt-5">
+            <div class="mt-2">
                 {{ $posts->links() }}
             </div>
         </ul>    

@@ -3,8 +3,27 @@
     background-color: #0d6efd !important;
     border-color: #0d6efd !important;
 }
+
 .bookmark_on {
     color: #fff !important;
     background-color: #212529 !important;
     border-color: #212529 !important;
+}
+
+#route_show a {
+    padding: 0 10px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 50%, rgb(137,234,255) 50%);
+    background-position: 0 0;
+    background-size: 200% auto;
+    transition: .3s;
+    text-decoration: none !important;
+    color: #212529;
+    border-bottom: 2.5px solid;
+    border-image: linear-gradient(to right, #89EAFF, #F97FC0) 1;
+}
+
+#route_show a:hover {
+    background-position: -100% 0;
+    color: #fff;
+    border-bottom: 0;
 }

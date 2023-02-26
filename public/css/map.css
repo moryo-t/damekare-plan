@@ -175,11 +175,14 @@ label {
     transition: .3s;
     text-decoration: none;
     color: #212529;
+    border-bottom: 2.5px solid #000;
+    border-image: linear-gradient(to right, #89EAFF, #F97FC0) 1;
 }
 
 #plan a:hover {
     background-position: -100% 0;
     color: #fff;
+    border-bottom: 0px
 }
 
 
@@ -317,12 +320,5 @@ label {
     }
     input {
         height: 30px;
-    }
-
-    .small-phone {
-        display: flex;
-    }
-    .small-phone > div {
-        margin: 0 5px;
     }
 }

@@ -41,10 +41,10 @@
                     <ul class="navbar-nav ms-auto">
                         @if(!Auth::check())
                             <li class="nav-item">
-                                <a class="nav-link" href="/map">{{ __('プラン設計') }}</a>
+                                <a class="nav-link" href="/map">{{ __('プランを設計') }}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/search">{{ __('プラン検索') }}</a>
+                                <a class="nav-link" href="/search">{{ __('プランを検索') }}</a>
                             </li>
                         @endif
                         <!-- Authentication Links -->

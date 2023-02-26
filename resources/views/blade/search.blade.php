@@ -17,7 +17,7 @@
             <div id="form-center" class="d-flex align-items-center justify-content-center"> 
                 <form action="/search/result" name="list_form" class="mb-0 w-75">
                     <div class="input-group">
-                        <input type="text" class="form-control" aria-label="Text input with dropdown button" name="input_result"  id="inputResult" placeholder="都道府県や市区町村、スポットなどを入力">
+                        <input type="text" class="form-control" aria-label="Text input with dropdown button" name="input_result"  id="inputResult" placeholder="都道府県や店舗名などを入力">
                         <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">都道府県</button>
                         <ul class="dropdown-menu dropdown-menu-end">
                             <li class="dropdown-item prefectures">北海道</li>

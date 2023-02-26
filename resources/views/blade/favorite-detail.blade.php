@@ -25,13 +25,13 @@
                     <div>
                         <form action="/favorite/{{ $item->id }}/post" id="favorite_post">
                             @csrf
-                            <button type="button" class="btn btn-outline-primary btn-sm" id="post_button">プラン投稿</button>
+                            <button type="button" class="btn btn-outline-primary btn-sm" id="post_button">プランを投稿</button>
                         </form>    
                     </div>
                     <div class="ms-2">
                         <form action="/favorite/destroy/{{ $item->id }}" id="favorite_remove">
                             @csrf
-                            <button type="button" class="btn btn-danger btn-sm" id="remove_button">オキニ削除</button>
+                            <button type="button" class="btn btn-danger btn-sm" id="remove_button">保存を削除</button>
                         </form>
                     </div>
                 </div>

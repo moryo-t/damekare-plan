@@ -30,13 +30,13 @@
             <label for="">始発場所</label>
             <input type="text" class="form-control" placeholder="集合場所を入力" name="start" id="pac-input-start">
         </div>
-        <div class="w-100">
+        <div class="mb-3 w-100">
             <label for="">終着場所</label>
             <input type="text" class="form-control" placeholder="終着場所を入力" name="end" id="pac-input-end">
         </div>
 
-        <div class="mt-1 mb-1 data-spot">
-            レストランや、遊園地などのデート場所を入力
+        <div class="w-100 data-spot">
+            経由地の入力
         </div>
 
         <div class="mb-1 w-100">
@@ -59,24 +59,22 @@
             <label for="">場所5</label>
             <input type="text" class="form-control" placeholder="場所5" name="place5" id="pac-input-place5">
         </div>
-        <div class="w-100 small-phone">
-            <div class="mt-2 d-grid w-100">
-                @if(Auth::check())
-                    <button type="button"
-                    class="btn btn-outline-danger"
-                    id="submit_favorite">オキニ登録</button>
-                @else
-                    <a href="/login" class="btn btn-outline-danger">オキニ登録</a>
-                @endif
+        <div class="w-100 d-flex">
+            <div class="mt-2 d-grid w-100 me-1">
+                @auth
+                    <button type="button" class="btn btn-outline-danger" id="submit_favorite">プランを保存</button>
+                @endauth
+                @guest
+                    <a href="/login" class="btn btn-outline-danger">プランを保存</a>
+                @endguest
             </div>
-            <div class="mt-2 d-grid w-100">
-                @if(Auth::check())
-                    <button type="button"
-                    class="btn btn-outline-primary"
-                    id="submit_plan">プラン投稿</button>
-                @else
-                    <a href="/login" class="btn btn-outline-primary">プラン投稿</a>
-                @endif
+            <div class="mt-2 d-grid w-100 ms-1">
+                @auth
+                    <button type="button" class="btn btn-outline-primary" id="submit_plan">プランを投稿</button>
+                @endauth
+                @guest
+                    <a href="/login" class="btn btn-outline-primary">プランを投稿</a>
+                @endguest
             </div>    
         </div>
     </form>

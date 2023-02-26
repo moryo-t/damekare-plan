@@ -45,7 +45,7 @@
                         <div class="ms-2">
                             <form action="/search/destroy/{{ $item->id }}" id="remove-post" method="POST">
                                 @csrf
-                                <button type="button" class="btn btn-danger btn-sm" id="remove-button">投稿削除</button>
+                                <button type="button" class="btn btn-danger btn-sm" id="remove-button">投稿を削除</button>
                             </form>
                         </div>
                     @endif
@@ -105,7 +105,7 @@
                         <span>{{ $item->user->name }}</span> さんが投稿したプラン
                     @endif
                 </div>
-                <div>
+                <div id="plan">
                     <a href="/search/{{ $item->id }}/route">
                         <div class="d-inline">このプランのルート</div>
                     </a>    

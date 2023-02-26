@@ -12,7 +12,7 @@
 
 @section('main')
     <div class="container mx-auto mt-3 mb-5">
-        <h2 class="mb-3">お気に入り</h2>
+        <h2 class="mb-3">保存したプラン</h2>
         <ul class="list-group">
             @foreach($items as $item)
                 @csrf
