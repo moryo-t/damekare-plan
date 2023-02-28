@@ -105,7 +105,7 @@
                 <div class="login_warning text-danger">
                     <span class="border-bottom border-danger">※初めに入力した住所から半径10km以内の場所を優先的にルートの候補として出力します。またデフォルトでは、車でのルート案内になっています。</span>
                 </div>
-                <div class="d-flex justify-content-between align-items-center mt-3">
+                <div class="d-flex justify-content-lg-between justify-content-center flex-lg-row flex-column align-items-center mt-3">
                     <div class="img_explanation">
                         <img src="{{ asset('img/map_explanation.jpg') }}" alt="" class="w-100 object-fit-cover">
                     </div>
@@ -118,7 +118,7 @@
             <div class="mb-2">
                 <h4>Step2</h4>
                 <div>プランの設計が完了したら「プランを保存」および「プランを投稿」をクリックしプラン内容の保存または投稿を行う。</div> 
-                <div class="d-flex justify-content-between align-items-center mt-3">
+                <div class="d-flex justify-content-lg-between justify-content-center flex-lg-row flex-column align-items-center mt-3">
                     <div class="img_explanation">
                         <img src="{{ asset('img/map_explanation_route.jpg') }}" alt="" class="w-100 object-fit-cover">
                     </div>
@@ -148,7 +148,7 @@
                 <h4>Step2</h4>
                 <div>フォームに都道府県や店舗名などを入力し、送信する。
                 </div>
-                <div class="d-flex justify-content-between align-items-center mt-3">
+                <div class="d-flex justify-content-lg-between justify-content-center flex-lg-row flex-column align-items-center mt-3">
                     <div class="img_explanation">
                         <img src="{{ asset('img/search_form.jpg') }}" alt="" class="w-100 object-fit-cover">
                     </div>
@@ -161,7 +161,7 @@
             <div class="mb-2">
                 <h4>Step3</h4>
                 <div>気になったプランを選択するとプランの詳細が表示される。</div>
-                <div class="d-flex justify-content-between align-items-center mt-3">
+                <div class="d-flex justify-content-lg-between justify-content-center flex-lg-row flex-column align-items-center mt-3">
                     <div class="img_explanation">
                         <img src="{{ asset('img/search_result.jpg') }}" alt="" class="w-100 object-fit-cover">
                     </div>
@@ -207,7 +207,7 @@
                 <div class="mb-2">
                     <h4>Step1</h4>
                     <div>プラン名（タイトル）右のアイコンを選択する。</div>
-                    <div class="d-flex justify-content-between align-items-center mt-3">
+                    <div class="d-flex justify-content-lg-between justify-content-center flex-lg-row flex-column align-items-center mt-3">
                         <div class="img_explanation">
                             <img src="{{ asset('img/edit_name.jpg') }}" alt="" class="w-100 object-fit-cover">
                         </div>
@@ -220,7 +220,7 @@
                 <div class="mb-2">
                     <h4>Step2</h4>
                     <div>変更したいプラン名（タイトル）を入力し、「OK」を選択する。</div>
-                    <div class="d-flex justify-content-between align-items-center mt-3">
+                    <div class="d-flex justify-content-lg-between justify-content-center flex-lg-row flex-column align-items-center mt-3">
                         <div class="img_explanation">
                             <img src="{{ asset('img/edit_title_completion.jpg') }}" alt="" class="w-100 object-fit-cover">
                         </div>
@@ -238,7 +238,7 @@
                 <div class="mb-2">
                     <h4>Step1</h4>
                     <div>プラン詳細ページ右上に設置されている「投稿を削除」ボタンを選択する。</div>
-                    <div class="d-flex justify-content-between align-items-center mt-3">
+                    <div class="d-flex justify-content-lg-between justify-content-center flex-lg-row flex-column align-items-center mt-3">
                         <div class="img_explanation">
                             <img src="{{ asset('img/nagoya_plan_delete.jpg') }}" alt="" class="w-100 object-fit-cover">
                         </div>
@@ -264,7 +264,7 @@
                 <div class="mb-2">
                     <h4>Step1</h4>
                     <div>プラン詳細ページの質問までスクロールする。</div>
-                    <div class="d-flex justify-content-between align-items-center mt-3">
+                    <div class="d-flex justify-content-lg-between justify-content-center flex-lg-row flex-column align-items-center mt-3">
                         <div class="img_explanation">
                             <img src="{{ asset('img/search_detail_scroll.jpg') }}" alt="" class="w-100 object-fit-cover">
                         </div>
