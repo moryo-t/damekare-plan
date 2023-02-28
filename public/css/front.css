@@ -20,3 +20,12 @@ h4 {
 .split_title span {
     border-bottom: 2px solid #000;
 }
+
+.img_explanation {
+    width: 45%;
+}
+
+.login_warning {
+    font-size: .8rem;
+    font-weight: bold;
+}

@@ -25,3 +25,31 @@
     border: 4px solid transparent;
     border-left: 4px solid #F87FC0;
 }    
+
+.arrow_blue{
+    position: relative;
+    display: inline-block;
+    padding: 0 40px 0 0;
+    color: #000;
+    vertical-align: middle;
+    text-decoration: none;
+    font-size: 15px;
+}
+.arrow_blue::before,
+.arrow_blue::after{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    content: "";
+    vertical-align: middle;
+}
+.arrow_blue_obj::before{
+    left: 15px;
+    box-sizing: border-box;
+    width: 15px;
+    height: 15px;
+    border: 15px solid transparent;
+    border-left: 15px solid #89EAFF;
+}    
