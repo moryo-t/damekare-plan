@@ -1,7 +1,7 @@
 <ul class="list-unstyled p-3">
     <li class="mb-1"><a class="mb-1 dropdown-item" href="/map">プランを設計</a></li>
     <li class="mb-1"><a class="mb-1 dropdown-item" href="/search">プランを探す</a></li>
-    <li><a class="mb-1 dropdown-item" href="/">使い方</a></li>
+    <li class="mb-1"><a class="mb-1 dropdown-item" href="/">使い方</a></li>
     @if(Auth::check())
         <li class="mb-1"><a class="mb-1 dropdown-item" href="/bookmark">ブックマーク</a></li>
         <li class="mb-1"><a class="mb-1 dropdown-item" href="/favorite">保存したプラン</a></li>

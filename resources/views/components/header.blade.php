@@ -30,6 +30,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/search">{{ __('プランを探す') }}</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">{{ __('使い方') }}</a>
+                        </li>
                     @endif
                     @guest
                         @if (Route::has('login'))
