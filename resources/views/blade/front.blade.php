@@ -190,7 +190,7 @@
                     <h4>Step1</h4>
                     <div>プラン詳細ページ右上に設置されている「ブックマーク」ボタンを選択する。</div>
                     <div class="d-flex justify-content-center align-items-center mt-3">
-                        <div class="img_explanation border">
+                        <div class="border img_single">
                             <img src="{{ asset('img/search_detail_love_sweet.jpg') }}" alt="" class="w-100 object-fit-cover">
                         </div>
                     </div>       
