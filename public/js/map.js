@@ -148,7 +148,7 @@ function calcRoute() {
                 addMarker(response.routes[0].legs[0].via_waypoints[4], "5", map, infoWindow, response.request.waypoints[4].location.query);
             }
         } else {
-            alert("ルートを作成できませんでした。\nフォームに住所以外の文字列が入っている可能性があります。");
+            alert("ルートを作成できませんでした。");
         }
     });
 }

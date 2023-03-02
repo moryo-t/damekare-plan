@@ -16,76 +16,85 @@
     </div>
     <div class="container container-fluid-md">
         <div class="row d-flex justify-content-between px-3 px-md-0">
-            <div class="col-12 col-md-3 border rounded p-3 mb-md-0 mb-3">
-                <h3 class="mb-3">プランを設計</h3>
-                <div class="mb-3">
-                    <a href="/map"><img src="{{ asset('img/undraw_by_the_road_re_vvs7.svg') }}" alt="" width="100%"></a>
-                </div>
-                <div>Google Mapを利用したプランの作成</div>
+            <div class="col-12 col-md-6 col-lg-4 p-3">
+                <div class="border rounded p-3 mb-3 h-100">
+                    <h3 class="mb-3">プランを設計</h3>
+                    <div class="mb-3">
+                        <a href="/map"><img src="{{ asset('img/undraw_by_the_road_re_vvs7.svg') }}" alt="" width="100%"></a>
+                    </div>
+                    <div>Google Mapを利用したプランの作成</div>
+                </div>    
             </div>
 
-            <div class="col-12 col-md-3 border rounded p-3 mb-md-0 mb-3">
-                <h3 class="mb-3">プランを保存</h3>
-                <div class="mb-3">
-                    <a href="/map"><img src="{{ asset('img/undraw_note_list_re_r4u9.svg') }}" alt="" width="100%"></a>
+            <div class="col-12 col-md-6 col-lg-4 p-3">
+                <div class="border rounded p-3 mb-3 h-100">
+                    <h3 class="mb-3">プランを保存</h3>
+                    <div class="mb-3">
+                        <a href="/map"><img src="{{ asset('img/undraw_note_list_re_r4u9.svg') }}" alt="" width="100%"></a>
+                    </div>
+                    <div>「<a href="/map">プランを設計</a>」で作成したプラン内容の保存</div>
                 </div>
-                <div>「<a href="/map">プランを設計</a>」で作成したプラン内容の保存</div>
             </div>
 
-            <div class="col-12 col-md-3 border rounded p-3 mb-md-0 mb-3">
-                <h3 class="mb-3">プランを投稿</h3>
-                <div class="mb-3">
-                    <a href="/map"><img src="{{ asset('img/undraw_post_re_mtr4.svg') }}" alt="" width="100%"></a>
+            <div class="col-12 col-md-6 col-lg-4 p-3">
+                <div class="border rounded p-3 mb-3 h-100">
+                    <h3 class="mb-3">プランを投稿</h3>
+                    <div class="mb-3">
+                        <a href="/map"><img src="{{ asset('img/undraw_post_re_mtr4.svg') }}" alt="" width="100%"></a>
+                    </div>
+                    <div>「<a href="/map">プランを設計</a>」で作成したプラン内容の投稿</div>
+                    <div>※投稿を行うと「<a href="/search">プランを探す</a>」にてプランの検索ができるようになります</div>
+                </div>    
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4 p-3">
+                <div class="border rounded p-3 mb-3 h-100">
+                    <h3 class="mb-3">プランを探す</h3>
+                    <div class="mb-3">
+                        <a href="/search"><img src="{{ asset('img/undraw_search_re_x5gq.svg') }}" alt="" width="100%"></a>
+                    </div>
+                    <div>フォームに都道府県や店名などを入力すると「<a href="/map">プランを投稿</a>」で投稿されたプランのルートおよびタイトルが検索され、表示される</div>    
                 </div>
-                <div>「<a href="/map">プランを設計</a>」で作成したプラン内容の投稿</div>
-                <div>※投稿を行うと「<a href="/search">プランを探す</a>」にてプランの検索ができるようになります</div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4 p-3">
+                <div class="border rounded p-3 mb-3 h-100">
+                    <h3 class="mb-3">ブックマーク</h3>
+                    <div class="mb-3">
+                        <a href="/bookmark"><img src="{{ asset('img/undraw_save_to_bookmarks_re_8ajf.svg') }}" alt="" width="100%"></a>
+                    </div>
+                    <div>
+                        「<a href="/search">プランを探す</a>」にて気に入る投稿をブックマークすることができます
+                    </div>    
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4 p-3">
+                <div class="border rounded p-3 mb-3 h-100">
+                    <h3 class="mb-3">保存したプラン</h3>
+                    <div class="mb-3">
+                        <a href="/favorite"><img src="{{ asset('img/undraw_browser_stats_re_j7wy.svg') }}" alt="" width="100%"></a>
+                    </div>
+                    <div>
+                        プランの作成後「<a href="/map">プランを保存</a>」を行なったプラン内容が表示されます
+                    </div>    
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4 p-3">
+                <div class="border rounded p-3 mb-3 h-100">
+                    <h3 class="mb-3">投稿を一覧</h3>
+                    <div class="mb-3">
+                        <a href="posts"><img src="{{ asset('img/undraw_contrast_re_hc7k.svg') }}" alt="" width="100%"></a>
+                    </div>
+                    <div>
+                        プランの作成後「<a href="map">プランを投稿</a>」を行なったプラン内容が表示されます
+                    </div>    
+                </div>
             </div>
         </div>
-
-        <div class="row d-flex justify-content-between px-3 px-md-0 mt-4">
-            <div class="col-12 col-md-3 border rounded p-3 mb-md-0 mb-3">
-                <h3 class="mb-3">プランを探す</h3>
-                <div class="mb-3">
-                    <a href="/search"><img src="{{ asset('img/undraw_search_re_x5gq.svg') }}" alt="" width="100%"></a>
-                </div>
-                <div>フォームに都道府県や店名などを入力すると「<a href="/map">プランを投稿</a>」で投稿されたプランのルートおよびタイトルが検索され、表示される</div>
-            </div>
-
-            <div class="col-12 col-md-3 border rounded p-3 mb-md-0 mb-3">
-                <h3 class="mb-3">ブックマーク</h3>
-                <div class="mb-3">
-                    <a href="/bookmark"><img src="{{ asset('img/undraw_save_to_bookmarks_re_8ajf.svg') }}" alt="" width="100%"></a>
-                </div>
-                <div>
-                    「<a href="/search">プランを探す</a>」にて気に入る投稿をブックマークすることができます
-                </div>
-            </div>
-
-            <div class="col-12 col-md-3 border rounded p-3 mb-md-0 mb-3">
-                <h3 class="mb-3">保存したプラン</h3>
-                <div class="mb-3">
-                    <a href="/favorite"><img src="{{ asset('img/undraw_browser_stats_re_j7wy.svg') }}" alt="" width="100%"></a>
-                </div>
-                <div>
-                    プランの作成後「<a href="/map">プランを保存</a>」を行なったプラン内容が表示されます
-                </div>
-            </div>
-        </div>
-
-        <div class="row d-flex justify-content-between px-3 px-md-0 mt-4">
-            <div class="col-12 col-md-3 border rounded p-3 mb-md-0 mb-3">
-                <h3 class="mb-3">投稿を一覧</h3>
-                <div class="mb-3">
-                    <a href="posts"><img src="{{ asset('img/undraw_contrast_re_hc7k.svg') }}" alt="" width="100%"></a>
-                </div>
-                <div>
-                    プランの作成後「<a href="map">プランを投稿</a>」を行なったプラン内容が表示されます
-                </div>
-            </div>
-        </div>
-
-
     </div>
+
     <div class="container mt-3">
         @guest
             <div class="login_warning">
@@ -103,7 +112,7 @@
                 <h4>Step1</h4>
                 <div>「<a href="/map">プランを設計</a>」から「始発場所」と「終着場所」を入力する。他の「場所1」「場所2」「場所3」「場所4」「場所5」は「始発場所」から「終着場所」までに行きたい場所があれば入力する。</div> 
                 <div class="login_warning text-danger">
-                    <span class="border-bottom border-danger">※初めに入力した住所から半径10km以内の場所を優先的にルートの候補として出力します。またデフォルトでは、車でのルート案内になっています。</span>
+                    <span class="border-bottom border-danger">※初めに入力した住所から半径10km以内の場所を優先的に候補として提案をします。またデフォルトでは、車でのルート案内になっています。</span>
                 </div>
                 <div class="d-flex justify-content-lg-between justify-content-center flex-lg-row flex-column align-items-center mt-3">
                     <div class="img_explanation">
@@ -234,7 +243,7 @@
 
             <div class="mt-4">
                 <h4 class="split_title pb-1"><span>投稿プランの削除</span></h4>
-                <div class="text-danger pb-2 login_warning"><span class="border-bottom border-danger">※投稿プランの削除はプラン投稿者のみが行えます。また投稿者であるにもかかわらず投稿プランの削除ができない場合は<a href="/login">ログイン</a>がされていない可能性がありますので<a href="/login">ログイン</a>の方をよろしくお願いいたします。</span></div>
+                <div class="text-danger pb-2 login_warning"><span class="border-bottom border-danger">※投稿プランの削除はプラン投稿者のみが行えます。また投稿者であるにもかかわらず投稿プランの削除ができない場合は<a href="/login">ログイン</a>がされていない可能性がありますので<a href="/login">ログイン</a>をお願いいたします。</span></div>
                 <div class="mb-2">
                     <h4>Step1</h4>
                     <div>プラン詳細ページ右上に設置されている「投稿を削除」ボタンを選択する。</div>
