@@ -20,6 +20,6 @@
         @yield('nav')
     </nav>
     <div id="mask"></div>
-    <script src="{{ asset('js/quit-ajax.js') }}" defer></script>
+    @yield('script')
 </body>
 </html>
