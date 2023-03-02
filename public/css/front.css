@@ -24,6 +24,9 @@ h4 {
 .img_explanation {
     width: 45%;
 }
+.img_single {
+    width: 75%;
+}
 
 .login_warning {
     font-size: .8rem;
@@ -32,7 +35,7 @@ h4 {
 
 
 @media screen and (max-width: 992px) {
-    .img_explanation {
+    .img_explanation, .img_single {
         width: 95%;
     }
 }
