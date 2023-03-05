@@ -5,5 +5,6 @@
     "/js/bookmark-ajax.js": "/js/bookmark-ajax.js",
     "/js/edit-title.js": "/js/edit-title.js",
     "/js/quit-ajax.js": "/js/quit-ajax.js",
+    "/js/page-loaded.js": "/js/page-loaded.js",
     "/css/app.css": "/css/app.css"
 }

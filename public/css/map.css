@@ -184,7 +184,9 @@ label {
     color: #fff;
     border-bottom: 0px
 }
-
+#duration {
+    background:linear-gradient(transparent 60%, #89EAFF 60%);
+}
 
 
 #mask {

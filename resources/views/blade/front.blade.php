@@ -1,4 +1,4 @@
-@extends('layouts.parent')
+@extends('layouts.front-parent')
 
 @section('title', 'ダメかれプラン')
 
@@ -14,7 +14,7 @@
             <div>ダメ彼氏・ダメンズに送るデート作成を目的としたサイトです。</div>
         </div>
     </div>
-    <div class="container container-fluid-md">
+    <div class="container container-fluid-md aaa">
         <div class="row d-flex justify-content-between px-3 px-md-0">
             <div class="col-12 col-md-6 col-lg-4 p-3">
                 <div class="border rounded p-3 mb-3 h-100">
@@ -323,6 +323,5 @@
                 <div>※退会処理が実行されるとログインすることができなくなります。</div>
             </div>
         </div>
-
     </div>
 @endsection

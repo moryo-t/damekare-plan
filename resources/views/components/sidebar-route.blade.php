@@ -82,7 +82,7 @@
     </form>
     <div class="d-flex justify-content-between">
         <div>
-            <div id="duration" class="border-bottom border-primary"></div>
+            <div id="duration" class="fw-bold"></div>
         </div>
         <div id="plan">
             <a href="/search">プラン検索</a>

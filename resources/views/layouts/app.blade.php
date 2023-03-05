@@ -48,6 +48,9 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="/search">{{ __('プランを検索') }}</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/">{{ __('使い方') }}</a>
+                            </li>
                         @endif
                         <!-- Authentication Links -->
                         @guest
