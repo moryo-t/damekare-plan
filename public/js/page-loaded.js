@@ -28237,11 +28237,19 @@ $(function () {
   });
 });
 $(window).on('load', function () {
-  setTimeout(function () {
-    $('#container').delay(1000).fadeOut();
-    $('#img-loaded').delay(1200).fadeIn();
-    $('.progress-container').delay(1800).fadeOut();
-  }, 1000);
+  if (window.name != "first_loaded") {
+    setTimeout(function () {
+      $('#container').delay(1000).fadeOut();
+      $('#img-loaded').delay(1200).fadeIn();
+      $('.progress-container').delay(1800).fadeOut();
+    }, 1000);
+    window.name = "first_loaded";
+  } else {
+    setTimeout(function () {
+      $('#container').delay(1000).fadeOut();
+      $('.progress-container').delay(1200).fadeOut();
+    }, 1000);
+  }
 });
 })();
 
