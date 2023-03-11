@@ -46,7 +46,7 @@
                                 <a class="nav-link" href="/map">{{ __('プランを設計') }}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/search">{{ __('プランを検索') }}</a>
+                                <a class="nav-link" href="/search">{{ __('プランを探す') }}</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="/">{{ __('使い方') }}</a>
