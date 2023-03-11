@@ -2,11 +2,12 @@ require("./bootstrap");
 
 import { createApp } from 'vue'
 import ExampleComponent from './components/ExampleComponent'
-import AppComponent from './components/AppComponent'
+import HeaderComponent from './components/HeaderComponent'
 
 createApp({
     components: {
-        'app-component': AppComponent,
+        ExampleComponent,
+        HeaderComponent,
     },
 }).mount('#app')
 

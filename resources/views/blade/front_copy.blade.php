@@ -6,32 +6,9 @@
     @include('components.header')
 @endsection
 
-@section('progress')
-    <div class="progress-container">
-        <div id="container"></div>
-        <div id="img-loaded" class="w-50 position-absolute top-50 start-50">
-            <img src="img/main-logo.png" class="w-100 object-fit-cover">
-        </div>
-    </div>
-@endsection
-
 @section('main')
-    <div class="swiper">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                <img src="{{ asset('img/game_man_color.jpg') }}" alt="">
-            </div>
-            <div class="swiper-slide">
-                <img src="{{ asset('img/disappointed_man_color.jpg') }}" alt="">
-            </div>
-            <div class="swiper-slide">
-                <img src="{{ asset('img/planning_suit_man_color.jpg') }}" alt="">
-            </div>
-        </div>
-        <div class="swiper-scrollbar"></div>
-    </div>
-
     <div class="container-fluid px-0">
+        <img src="{{ asset('img/untidymen.jpg') }}" alt="" class="img-fluid">
         <div class="text-center py-5 purpose my-5 px-sm-0 px-3">
             <h3>デートプランの立て方が分からないダメンズ集合！！</h3>
             <div>ダメ彼氏・ダメンズに送るデート作成を目的としたサイトです。</div>
@@ -43,7 +20,7 @@
                 <div class="border rounded p-3 mb-3 h-100">
                     <h3 class="mb-3">プランを設計</h3>
                     <div class="mb-3">
-                        <a href="/map"><img src="{{ asset('img/undraw_by_the_road_re_vvs7.svg') }}" alt="" class="w-100"></a>
+                        <a href="/map"><img src="{{ asset('img/undraw_by_the_road_re_vvs7.svg') }}" alt="" width="100%"></a>
                     </div>
                     <div>Google Mapを利用したプランの作成</div>
                 </div>    
@@ -53,7 +30,7 @@
                 <div class="border rounded p-3 mb-3 h-100">
                     <h3 class="mb-3">プランを保存</h3>
                     <div class="mb-3">
-                        <a href="/map"><img src="{{ asset('img/undraw_note_list_re_r4u9.svg') }}" alt="" class="w-100"></a>
+                        <a href="/map"><img src="{{ asset('img/undraw_note_list_re_r4u9.svg') }}" alt="" width="100%"></a>
                     </div>
                     <div>「<a href="/map">プランを設計</a>」で作成したプラン内容の保存</div>
                 </div>
@@ -63,7 +40,7 @@
                 <div class="border rounded p-3 mb-3 h-100">
                     <h3 class="mb-3">プランを投稿</h3>
                     <div class="mb-3">
-                        <a href="/map"><img src="{{ asset('img/undraw_post_re_mtr4.svg') }}" alt="" class="w-100"></a>
+                        <a href="/map"><img src="{{ asset('img/undraw_post_re_mtr4.svg') }}" alt="" width="100%"></a>
                     </div>
                     <div>「<a href="/map">プランを設計</a>」で作成したプラン内容の投稿</div>
                     <div>※投稿を行うと「<a href="/search">プランを探す</a>」にてプランの検索ができるようになります</div>
@@ -74,7 +51,7 @@
                 <div class="border rounded p-3 mb-3 h-100">
                     <h3 class="mb-3">プランを探す</h3>
                     <div class="mb-3">
-                        <a href="/search"><img src="{{ asset('img/undraw_search_re_x5gq.svg') }}" alt="" class="w-100"></a>
+                        <a href="/search"><img src="{{ asset('img/undraw_search_re_x5gq.svg') }}" alt="" width="100%"></a>
                     </div>
                     <div>フォームに都道府県や店名などを入力すると「<a href="/map">プランを投稿</a>」で投稿されたプランのルートおよびタイトルが検索され、表示される</div>    
                 </div>
@@ -84,7 +61,7 @@
                 <div class="border rounded p-3 mb-3 h-100">
                     <h3 class="mb-3">ブックマーク</h3>
                     <div class="mb-3">
-                        <a href="/bookmark"><img src="{{ asset('img/undraw_save_to_bookmarks_re_8ajf.svg') }}" alt="" class="w-100"></a>
+                        <a href="/bookmark"><img src="{{ asset('img/undraw_save_to_bookmarks_re_8ajf.svg') }}" alt="" width="100%"></a>
                     </div>
                     <div>
                         「<a href="/search">プランを探す</a>」にて気に入る投稿をブックマークすることができます
@@ -96,7 +73,7 @@
                 <div class="border rounded p-3 mb-3 h-100">
                     <h3 class="mb-3">保存したプラン</h3>
                     <div class="mb-3">
-                        <a href="/favorite"><img src="{{ asset('img/undraw_browser_stats_re_j7wy.svg') }}" alt="" class="w-100"></a>
+                        <a href="/favorite"><img src="{{ asset('img/undraw_browser_stats_re_j7wy.svg') }}" alt="" width="100%"></a>
                     </div>
                     <div>
                         プランの作成後「<a href="/map">プランを保存</a>」を行なったプラン内容が表示されます
@@ -108,7 +85,7 @@
                 <div class="border rounded p-3 mb-3 h-100">
                     <h3 class="mb-3">投稿を一覧</h3>
                     <div class="mb-3">
-                        <a href="posts"><img src="{{ asset('img/undraw_contrast_re_hc7k.svg') }}" alt="" class="w-100"></a>
+                        <a href="posts"><img src="{{ asset('img/undraw_contrast_re_hc7k.svg') }}" alt="" width="100%"></a>
                     </div>
                     <div>
                         プランの作成後「<a href="map">プランを投稿</a>」を行なったプラン内容が表示されます
@@ -347,9 +324,4 @@
             </div>
         </div>
     </div>
-@endsection
-
-@section('script')
-    <script src="{{ asset('js/quit-ajax.js') }}" defer></script>
-    <script src="{{ asset('js/app.js') }}" defer></script>
 @endsection

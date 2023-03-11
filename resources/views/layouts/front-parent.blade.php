@@ -14,27 +14,27 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+    <link rel="stylesheet" href="{{ asset('css/slide.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/front.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/page-loaded.css') }}" rel="stylesheet">
     <script src="{{ asset('js/plugin/imagesloaded.pkgd.min.js')}}"></script>
     <script src="{{ asset('js/plugin/progressbar.min.js')}}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js" defer></script>
     <script src="{{ asset('js/page-loaded.js') }}"></script>
 </head>
 <body>
-    <div class="progress-container">
-        <div id="container"></div>
-        <div id="img-loaded" class="w-50 position-absolute top-50 start-50">
-            <img src="img/main-logo.png" class="w-100 object-fit-cover">
-        </div>
-    </div>    
+    <div id="app">
+        @yield('progress')
 
-    <header>
-        @yield('header')
-    </header>
-    <main>
-        @yield('main')
-    </main>
+        <header>
+            @yield('header')
+        </header>
+        <main>
+            @yield('main')
+        </main>    
+    </div>
+
     @yield('script')
-    <script src="{{ asset('js/quit-ajax.js') }}" defer></script>
 </body>
 </html>

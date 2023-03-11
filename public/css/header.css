@@ -1,4 +1,4 @@
-#app > nav > .container > a > img {
+nav > .container > a > img {
     width: 130px;
 }
 
@@ -10,6 +10,6 @@ main {
     padding-top: 55px;
 }
 
-#app {
+#header {
     z-index: 2;
 }

@@ -11,8 +11,6 @@ $(function() {
         svgStyle: {width: '100%', height: '50%'},
         text: {
             style: {
-                // Text color.
-                // Default: same as stroke color (options.color)
                 color: '#664DEC',
                 padding: 0,
                 margin: 0,
@@ -52,4 +50,22 @@ $(window).on('load', function() {
             $('.progress-container').delay(1200).fadeOut();
         }, 1000);
     }
+
+    setTimeout(function(){
+        const swiper = new Swiper('.swiper', {
+            direction: 'vertical',
+            loop: true,
+            effect: "fade",
+            autoHeight: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            
+            scrollbar: {
+                el: ".swiper-scrollbar",
+                hide: true,
+            },
+        });
+    }, 3000);
 });
