@@ -1,5 +1,3 @@
-const { update } = require("lodash");
-
 $(function() {
     var bar = new ProgressBar.Line(container, {
         strokeWidth: 4,

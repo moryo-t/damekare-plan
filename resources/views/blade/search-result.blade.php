@@ -13,6 +13,15 @@
 @section('main')
     <div class="container mx-auto mt-3 mb-5">
         <h2 class="mb-3">「{{ $input }}」で検索した結果</h2>
+        @if(!isset($posts[0]))
+            <div class="position-absolute top-50 start-50 none-search">
+                <div class="text-secondary">
+                    <div>検索結果なし。</div>
+                    <div>空文字でフォームを送信すると全都道府県のプランが閲覧できます。</div>
+                    <div class="text-end"><a href="/search">戻る</a></div>    
+                </div>    
+            </div>
+        @endif
         <ul class="list-group">
             @foreach($posts as $post)
                 @csrf
@@ -46,4 +55,8 @@
             </div>
         </ul>    
     </div>
+@endsection
+
+@section('script')
+    <script src="{{ asset('js/app.js') }}"></script>
 @endsection

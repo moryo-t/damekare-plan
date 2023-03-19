@@ -1,0 +1,41 @@
+.fade-element {
+    opacity: 0;
+    transform-origin: left bottom;
+    transform:rotate(10deg);
+}
+.fade-element.active {
+    opacity: 1;
+    transition: 1s;
+    transform:rotate(0);
+}
+
+.lecture-bar > .lecture-control {
+    background-color: #89EAFF;
+    font-weight: bold;
+    transform: translateX(-100%);
+}
+.lecture-bar.active > .lecture-control {
+    transition: 1s;
+    transition-timing-function: ease;
+    transform: translateX(0);
+}
+.lecture-bar > .lecture-control > h3 {
+    opacity: 0;
+    transform: translateY(30px);
+}
+.lecture-bar.active > .lecture-control > h3 {
+    opacity: 1;
+    transition: 1s;
+    transition-delay: 1s;
+    transform: translateY(0);
+}
+
+.manual-element {
+    opacity: 0;
+    transform: translateY(30px);
+}
+.manual-element.active {
+    opacity: 1;
+    transition: 1s;
+    transform: translateY(0);
+}

@@ -194,6 +194,7 @@
             <script src="{{ asset('js/edit-title.js') }}" defer></script>
         @endif
     @endforeach
+    <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/bookmark-ajax.js') }}" defer></script>
     <script src="{{ asset('js/chat.js') }}" defer></script>
     <script src="{{ asset('js/chat-ajax.js') }}" defer></script>

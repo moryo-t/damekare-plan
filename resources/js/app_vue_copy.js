@@ -10,4 +10,4 @@ const app = createApp({
         HeaderComponent,
     },
 })
-app.mount('#header')
+app.mount('#app')
