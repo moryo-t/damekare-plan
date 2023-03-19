@@ -26,7 +26,7 @@
 .lecture-bar.active > .lecture-control > h3 {
     opacity: 1;
     transition: 1s;
-    transition-delay: .7s;
+    transition-delay: 1s;
     transform: translateY(0);
 }
 
