@@ -19,13 +19,16 @@
     <div class="swiper">
         <div class="swiper-wrapper">
             <div class="swiper-slide">
-                <img src="{{ asset('img/game_man_color.jpg') }}" alt="">
+                <img src="{{ asset('img/food_cup_ramen_boy.jpg') }}" alt="">
             </div>
             <div class="swiper-slide">
-                <img src="{{ asset('img/disappointed_man_color.jpg') }}" alt="">
+                <img src="{{ asset('img/couple_okoru_woman.jpg') }}" alt="">
             </div>
             <div class="swiper-slide">
-                <img src="{{ asset('img/planning_suit_man_color.jpg') }}" alt="">
+                <img src="{{ asset('img/hirameki_man.jpg') }}" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img src="{{ asset('img/couple_nakaii_hug.jpg') }}" alt="">
             </div>
         </div>
         <div class="swiper-scrollbar"></div>
