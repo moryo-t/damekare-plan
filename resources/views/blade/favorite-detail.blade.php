@@ -96,6 +96,7 @@
             <script src="{{ asset('js/edit-title.js') }}" defer></script>
         @endif
     @endforeach
+    <script src="{{ asset('js/app.js')}}"></script>
     <script src="{{ asset('js/favorite-remove.js') }}" defer></script>
     <script src="{{ asset('js/favorite-ajax.js') }}" defer></script>
 @endsection
