@@ -28,7 +28,7 @@
         @csrf
         <div class="mb-1 w-100">
             <label for="">始発場所</label>
-            <input type="text" class="form-control" placeholder="集合場所を入力" name="start" id="pac-input-start">
+            <input type="text" class="form-control" placeholder="始発場所を入力" name="start" id="pac-input-start">
         </div>
         <div class="mb-3 w-100">
             <label for="">終着場所</label>
