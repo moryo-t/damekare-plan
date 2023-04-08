@@ -58,7 +58,7 @@ function initMap() {
         autocomplete.addListener("place_changed", function() {
             const place = autocomplete.getPlace().formatted_address;
             codeAddress(place);
-        });        
+        });
     });
 
     directionsRenderer.setMap(map);        

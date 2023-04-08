@@ -72,19 +72,18 @@ class SearchController extends Controller
 
     public function chat($id, ChatRequest $request)
     {
-        $chat = new Chat;
-        $user = Auth::id();
+        $user_id = Auth::id();
         $post_id = $id;
         $message = $request->message;
-        $chat->fill([
+        Chat::create([
             'post_id' => $post_id,
-            'user_id' => $user,
+            'user_id' => $user_id,
             'message' => $message,
-        ])->save();
+        ]);
 
-        $chatUser = $chat->with('user')->latest()->first();
-        $user_name = $chatUser->user->name;
-        $chat_time = $chatUser->created_at;
+        $user_name = Auth::user()->name;
+        $chatData =  Chat::where('user_id', $post_id)->latest()->first();
+        $chat_time = $chatData->created_at;
         $minNot = date('Y-n-j G:i', strtotime($chat_time));
 
         $dataResponse = ['name' => $user_name, 'time' => $minNot, 'message' => $message];
