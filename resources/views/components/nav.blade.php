@@ -5,7 +5,7 @@
     @if(Auth::check())
         <li class="mb-1"><a class="mb-1 dropdown-item" href="/bookmark">ブックマーク</a></li>
         <li class="mb-1"><a class="mb-1 dropdown-item" href="/favorite">保存したプラン</a></li>
-        <li class="mb-1"><a class="mb-1 dropdown-item" href="/posts">投稿を一覧</a></li>
+        <li class="mb-1"><a class="mb-1 dropdown-item" href="/posts">投稿一覧</a></li>
     @endif
     @if(Auth::check())
         <li class="mb-1">

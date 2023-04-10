@@ -57,7 +57,7 @@
                                 <a class="dropdown-item" href="/">使い方</a>
                                 <a class="dropdown-item" href="/bookmark">ブックマーク</a>
                                 <a class="dropdown-item" href="/favorite">保存したプラン</a>
-                                <a class="dropdown-item" href="/posts">投稿を一覧</a>
+                                <a class="dropdown-item" href="/posts">投稿一覧</a>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();">

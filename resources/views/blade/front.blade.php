@@ -49,7 +49,7 @@
                     <div class="mb-3">
                         <a href="/map"><img src="img/undraw_by_the_road_re_vvs7.svg" alt="" class="w-100"></a>
                     </div>
-                    <div>Google Mapを利用したプランの作成</div>
+                    <div>Google Mapを利用したプランの作成ができます</div>
                 </div>    
             </div>
 
@@ -59,7 +59,7 @@
                     <div class="mb-3">
                         <a href="/map"><img src="img/undraw_note_list_re_r4u9.svg" alt="" class="w-100"></a>
                     </div>
-                    <div>「<a href="/map">プランを設計</a>」で作成したプラン内容の保存</div>
+                    <div>「<a href="/map">プランを設計</a>」で作成したプランの保存ができます</div>
                 </div>
             </div>
 
@@ -69,8 +69,7 @@
                     <div class="mb-3">
                         <a href="/map"><img src="img/undraw_post_re_mtr4.svg" alt="" class="w-100"></a>
                     </div>
-                    <div>「<a href="/map">プランを設計</a>」で作成したプラン内容の投稿</div>
-                    <div>※投稿を行うと「<a href="/search">プランを探す</a>」にてプランの検索ができるようになります</div>
+                    <div>「<a href="/map">プランを設計</a>」で作成したプランの投稿ができます</div>
                 </div>    
             </div>
 
@@ -80,7 +79,7 @@
                     <div class="mb-3">
                         <a href="/search"><img src="img/undraw_search_re_x5gq.svg" alt="" class="w-100"></a>
                     </div>
-                    <div>フォームに都道府県や店名などを入力すると「<a href="/map">プランを投稿</a>」で投稿されたプランのルートおよびタイトルが検索され、表示される</div>    
+                    <div>自分の行きたい都道府県や店名などを入力し、送信するとプランが表示されます。</div>
                 </div>
             </div>
 
@@ -91,7 +90,7 @@
                         <a href="/bookmark"><img src="img/undraw_save_to_bookmarks_re_8ajf.svg" alt="" class="w-100"></a>
                     </div>
                     <div>
-                        「<a href="/search">プランを探す</a>」にて気に入る投稿をブックマークすることができます
+                        気に入ったプランをブックマークすることができます
                     </div>    
                 </div>
             </div>
@@ -103,19 +102,19 @@
                         <a href="/favorite"><img src="img/undraw_browser_stats_re_j7wy.svg" alt="" class="w-100"></a>
                     </div>
                     <div>
-                        プランの作成後「<a href="/map">プランを保存</a>」を行なったプラン内容が表示されます
+                        「<a href="/map">プランを設計</a>」で保存したプランはここに表示されます。
                     </div>    
                 </div>
             </div>
 
             <div class="col-12 col-md-6 col-lg-4 p-3">
                 <div class="border rounded p-3 mb-3 h-100 fade-element">
-                    <h3 class="mb-3">投稿を一覧</h3>
+                    <h3 class="mb-3">投稿一覧</h3>
                     <div class="mb-3">
                         <a href="posts"><img src="img/undraw_contrast_re_hc7k.svg" alt="" class="w-100"></a>
                     </div>
                     <div>
-                        プランの作成後「<a href="map">プランを投稿</a>」を行なったプラン内容が表示されます
+                        「<a href="/map">プランを設計</a>」で投稿したプランはここに表示されます。
                     </div>    
                 </div>
             </div>
@@ -186,7 +185,7 @@
             </div>
             <div class="mb-2 manual-element">
                 <h4>Step2</h4>
-                <div>フォームに都道府県や店舗名などを入力し、送信する。
+                <div>入力フォームに都道府県や店舗名などを入力し、送信する。
                 </div>
                 <div class="d-flex justify-content-lg-between justify-content-center flex-lg-row flex-column align-items-center mt-3">
                     <div class="img_explanation border">
@@ -243,7 +242,7 @@
 
             <div class="mt-4">
                 <h4 class="split_title pb-1"><span>プラン名（タイトル）の変更</span></h4>
-                <div class="text-danger pb-2 login_warning"><span class="border-bottom border-danger">※プラン名（タイトル）の変更はプラン投稿者のみが行えます。また投稿者であるにもかかわらずプラン名（タイトル）の変更ができない場合は<a href="/login">ログイン</a>がされていない可能性がありますので<a href="/login">ログイン</a>の方をよろしくお願いいたします。</span></div>
+                <div class="text-danger pb-2 login_warning"><span class="border-bottom border-danger">※プラン名（タイトル）の変更はプラン投稿者のみが行えます。また投稿者であるにもかかわらずプラン名（タイトル）の変更ができない場合は<a href="/login">ログイン</a>がされていない可能性があります。</span></div>
                 <div class="mb-2 manual-element">
                     <h4>Step1</h4>
                     <div>プラン名（タイトル）右のアイコンを選択する。</div>
@@ -274,10 +273,10 @@
 
             <div class="mt-4">
                 <h4 class="split_title pb-1"><span>投稿プランの削除</span></h4>
-                <div class="text-danger pb-2 login_warning"><span class="border-bottom border-danger">※投稿プランの削除はプラン投稿者のみが行えます。また投稿者であるにもかかわらず投稿プランの削除ができない場合は<a href="/login">ログイン</a>がされていない可能性がありますので<a href="/login">ログイン</a>をお願いいたします。</span></div>
+                <div class="text-danger pb-2 login_warning"><span class="border-bottom border-danger">※投稿プランの削除はプラン投稿者のみが行えます。また投稿者であるにもかかわらず投稿プランの削除ができない場合は<a href="/login">ログイン</a>がされていない可能性があります。</span></div>
                 <div class="mb-2 manual-element">
                     <h4>Step1</h4>
-                    <div>プラン詳細ページ右上に設置されている「投稿を削除」ボタンを選択する。</div>
+                    <div>プラン詳細ページの右上に設置されている「投稿を削除」ボタンを選択する。</div>
                     <div class="d-flex justify-content-lg-between justify-content-center flex-lg-row flex-column align-items-center mt-3">
                         <div class="img_explanation border">
                             <img src="{{ asset('img/nagoya_plan_delete.jpg') }}" alt="" class="w-100 object-fit-cover">
@@ -316,7 +315,7 @@
                 </div>
                 <div class="mb-2 manual-element">
                     <h4>Step2</h4>
-                    <div>フォームに質問したい内容を入力する。</div>
+                    <div>入力フォームに質問したい内容を入力する。</div>
                     <div class="d-flex justify-content-center align-items-center mt-3">
                         <div class="border img_single">
                             <img src="{{ asset('img/chat_form.jpg') }}" alt="" class="w-100 object-fit-cover">
@@ -351,7 +350,7 @@
             <div class="mb-2 manual-element">
                 <h4>Step2</h4>
                 <div>「OK」を選択する。</div>
-                <div>※退会処理が実行されるとログインすることができなくなります。</div>
+                <div class="text-danger login_warning"><span class="border-bottom border-danger">※退会処理が実行されるとログインすることができなくなります。</span></div>
             </div>
         </div>
     </div>
