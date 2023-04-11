@@ -82,7 +82,7 @@ class SearchController extends Controller
         ]);
 
         $user_name = Auth::user()->name;
-        $chatData =  Chat::where('user_id', $post_id)->latest()->first();
+        $chatData =  Chat::where('user_id', $user_id)->latest()->first();
         $chat_time = $chatData->created_at;
         $minNot = date('Y-n-j G:i', strtotime($chat_time));
 

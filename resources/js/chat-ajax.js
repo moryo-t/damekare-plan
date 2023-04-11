@@ -26,9 +26,9 @@ $(function(){
             }
         })
         .fail((XMLHttpRequest, textStatus, errorThrown)=>{
-            console.log("XMLHttpRequest : " + XMLHttpRequest.status);
-            console.log("textStatus     : " + textStatus);
-            console.log("errorThrown    : " + errorThrown.message);
+            //console.log("XMLHttpRequest : " + XMLHttpRequest.status);
+            //console.log("textStatus     : " + textStatus);
+            //console.log("errorThrown    : " + errorThrown.message);
         })
     });
 })
