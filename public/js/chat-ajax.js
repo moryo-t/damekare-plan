@@ -10961,7 +10961,7 @@ $(function () {
     var url = new URLSearchParams(window.location.search);
     var post_id = url.get('id');
     $.ajax({
-      type: 'GET',
+      type: 'POST',
       url: '/message/' + post_id,
       dataType: 'json',
       data: formData,

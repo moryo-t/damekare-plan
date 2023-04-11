@@ -38,7 +38,7 @@ Route::post('/search/destroy/{id}', 'App\Http\Controllers\SearchController@destr
 Route::post('/search/{id}/bookmark', 'App\Http\Controllers\SearchController@bookmark_add');
 Route::post('/search/{id}/bookmark/detach', 'App\Http\Controllers\SearchController@bookmark_destroy');
 Route::post('/search/{id}/title', 'App\Http\Controllers\SearchController@edit_title');
-Route::get('/message/{id}', 'App\Http\Controllers\SearchController@chat');
+Route::post('/message/{id}', 'App\Http\Controllers\SearchController@chat');
 
 Route::get('/bookmark', 'App\Http\Controllers\BookmarkController@show');
 
