@@ -86,7 +86,9 @@ class SearchController extends Controller
         $chat_time = $chatData->created_at;
         $minNot = date('Y-n-j G:i', strtotime($chat_time));
 
-        $dataResponse = ['name' => $user_name, 'time' => $minNot, 'message' => $message];
+        $data_array = ['name' => $user_name, 'time' => $minNot, 'message' => $message];
+        $dataResponse = json_encode($data_array);
+
         return $dataResponse;
     }
 }
