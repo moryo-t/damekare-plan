@@ -36,8 +36,12 @@
 
     <div class="container-fluid px-0">
         <div class="text-center py-5 purpose my-5 px-sm-0 px-3">
-            <h3>デートプランの立て方が分からないダメンズ集合！！</h3>
-            <div>ダメ彼氏・ダメンズに送るデート作成を目的としたサイトです。</div>
+            <h3>
+                デートプランの立て方が分からないダメンズ集合！！
+            </h3>
+            <div>
+                <span class="d-inline-block">ダメ彼氏・ダメンズに送るデート作成を</span><span class="d-inline-block">目的としたサイトです。</span>
+            </div>
         </div>
     </div>
 
