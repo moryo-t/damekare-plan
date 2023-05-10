@@ -7,7 +7,7 @@ $(function() {
                 return false;
             } else {
                 postAjax();
-                alert("プラン「 " + title + " 」の投稿が完了いたしました！")
+                alert("プラン「 " + title + " 」の投稿が完了いたしました！");
             }
         } else {
             alert("プラン「 " + title + " 」は投稿済みです！！！");

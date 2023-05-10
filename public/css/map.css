@@ -215,6 +215,23 @@ label {
     border-radius: 50%;
 }
 
+.circle-btn {
+    width: 22px !important;
+    height: 22px !important;
+    font-size: small;
+} 
+.change_block {
+    display: none;
+}
+.add_block {
+    display: block;
+}
+.waypoint_check {
+    display: none !important;
+}
+.add_waypoint {
+    display: flex !important;
+}
 
 @media screen and (max-width: 800px) {
 	main {

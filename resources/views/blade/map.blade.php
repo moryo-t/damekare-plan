@@ -13,9 +13,9 @@
 <div id="map"></div>
 
 @section('script')
-    <script src="https://maps.google.com/maps/api/js?key=AIzaSyBpI-Gr9WenF5C3qh3PHBPZNlOYHCRdPW8&language=ja&libraries=places" defer></script>
     <script src="{{ asset('js/map.js') }}" defer></script>
-
+    <script defer src="https://maps.google.com/maps/api/js?key=AIzaSyBpI-Gr9WenF5C3qh3PHBPZNlOYHCRdPW8&language=ja&libraries=places&callback=initMap"></script>
     <script src="{{ asset('js/main.js') }}" defer></script>
+    <script src="{{ asset('js/edit-form.js') }}" defer></script>
     <script src="{{ asset('js/quit-ajax.js') }}" defer></script>
 @endsection

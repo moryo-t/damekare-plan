@@ -187,7 +187,10 @@
     </div>
 @endsection
 
+
 @section('script')
+    <script defer src="https://maps.google.com/maps/api/js?key=AIzaSyBpI-Gr9WenF5C3qh3PHBPZNlOYHCRdPW8&language=ja&libraries=places&callback=initMap"></script>
+
     @foreach ($items as $item) 
         @if (Auth::id() == $item->user_id)
             <script src="{{ asset('js/post-remove.js') }}" defer></script>

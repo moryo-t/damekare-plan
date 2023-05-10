@@ -19,7 +19,8 @@ class SearchController extends Controller
     public function show(Request $request)
     {
         $input = $request->input_result;
-        $posts = Post::where('title', 'like', '%' . $input . '%')
+        $posts = Post::latest()
+        ->where('title', 'like', '%' . $input . '%')
         ->orWhere('start', 'like', '%' . $input . '%')
         ->orWhere('end', 'like', '%' . $input . '%')
         ->orWhere('place1', 'like', '%' . $input . '%')
@@ -36,6 +37,7 @@ class SearchController extends Controller
     {
         $id = $request->id;
         $items = Post::with('chats')->where('id', $id)->get();
+        echo "<script>window.mapData = '$items';</script>";
         return view('blade.search-detail', ['items' => $items]);
     }
 
