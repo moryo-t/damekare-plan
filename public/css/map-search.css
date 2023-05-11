@@ -2,3 +2,8 @@
     height: 50%;
     width: 100%
 }
+
+#duration {
+    background: linear-gradient(transparent 60%, #89EAFF 60%);
+    font-size: 1.1rem;
+}

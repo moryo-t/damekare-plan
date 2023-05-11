@@ -98,7 +98,7 @@
                 <div class="border rounded p-3 set-end">{{ $item->end }}</div>
             </div>
 
-            <div class="d-flex justify-content-between mt-2" id="route_show">
+            <div class="d-flex justify-content-end mt-2" id="route_show">
                 <div>
                     @if (!$item->user)
                         <span class="fw-bold">退会済みユーザー</span>
@@ -110,7 +110,7 @@
 
             <div class="my-5">
                 <div id="map"></div>
-                <div id="duration" class="fw-bold mt-1"></div>
+                <div id="duration" class="fw-bold mt-1 d-inline-block"></div>
             </div>
 
             <div class="my-5">
