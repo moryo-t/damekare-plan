@@ -4,6 +4,7 @@
 
 <head>
     <link rel="stylesheet" href="{{ asset('css/bottom-arrow.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/map-search.css') }}">
     <link rel="stylesheet" href="{{ asset('css/chat.css') }}">
     <link rel="stylesheet" href="{{ asset('css/send-button.css') }}">
 </head>
@@ -105,11 +106,11 @@
                         <span>{{ $item->user->name }}</span> さんが投稿したプラン
                     @endif
                 </div>
-                <div id="plan">
-                    <a href="/search/{{ $item->id }}/route">
-                        <div class="d-inline">このプランのルート</div>
-                    </a>    
-                </div>
+            </div>
+
+            <div class="my-5">
+                <div id="map"></div>
+                <div id="duration" class="fw-bold mt-1"></div>
             </div>
 
             <div class="my-5">
@@ -187,8 +188,8 @@
     </div>
 @endsection
 
-
 @section('script')
+    <script src="{{ asset('js/map-search.js') }}" defer></script>
     <script defer src="https://maps.google.com/maps/api/js?key=AIzaSyBpI-Gr9WenF5C3qh3PHBPZNlOYHCRdPW8&language=ja&libraries=places&callback=initMap"></script>
 
     @foreach ($items as $item) 
