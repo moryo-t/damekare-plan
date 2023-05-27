@@ -25,6 +25,7 @@ class FavoriteController extends Controller
         $user = Auth::id();
         $id = $request->id;
         $items = Favorite::where('user_id', $user)->where('id', $id)->get();
+        echo "<script>window.mapData = '$items';</script>";
         return view('blade.favorite-detail', ['items' => $items]);
     }
 

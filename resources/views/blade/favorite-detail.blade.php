@@ -5,6 +5,7 @@
 <head>
     <link rel="stylesheet" href="{{ asset('css/bottom-arrow.css') }}">
     <link rel="stylesheet" href="{{ asset('css/send-button.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/map-search.css') }}">
 </head>
 
 @section('header')
@@ -80,17 +81,20 @@
                 <div>終着場所</div>
                 <div class="border rounded p-3 set-end">{{ $item->end }}</div>
             </div>
-
-            <div class="text-end mt-2" id="route_show">
-                <a href="/favorite/{{ $item->id }}/route">
-                    <div class="d-inline">このプランのルート</div>
-                </a>
-            </div>    
         @endforeach
+
+        <div class="my-5">
+            <div id="map"></div>
+            <div id="duration" class="fw-bold mt-1 d-inline-block"></div>
+        </div>
+
     </div>
 @endsection
 
 @section('script')
+    <script src="{{ asset('js/map-search.js') }}" defer></script>
+    <script defer src="https://maps.google.com/maps/api/js?key=AIzaSyBpI-Gr9WenF5C3qh3PHBPZNlOYHCRdPW8&language=ja&libraries=places&callback=initMap"></script>
+
     @foreach ($items as $item) 
         @if (Auth::id() == $item->user_id)
             <script src="{{ asset('js/edit-title.js') }}" defer></script>

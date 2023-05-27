@@ -37,7 +37,11 @@ function initMap() {
         if(driveIcon.classList.contains('drive-choice') == true) {
             driveIcon.classList.remove('drive-choice');
         }
-        calcRoute(allPlaces);
+
+        if (allPlaces.length >= 2) {
+            calcRoute(allPlaces);
+        }
+
     }, {passive: true});
 
 
