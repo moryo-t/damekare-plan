@@ -21,11 +21,6 @@ class LoginController extends Controller
 
     use AuthenticatesUsers;
 
-    /**
-     * Where to redirect users after login.
-     *
-     * @var string
-     */
     protected $redirectTo = RouteServiceProvider::HOME;
 
     /**
@@ -33,6 +28,20 @@ class LoginController extends Controller
      *
      * @return void
      */
+    protected function redirectTo()
+    {
+        // ログイン前のURLを取得
+        $previousUrl = session('previous_url');
+
+        if ($previousUrl) {
+            // ログイン前のURLがある場合はそのURLにリダイレクト
+            return $previousUrl;
+        } else {
+            // ログイン前のURLがない場合はデフォルトのリダイレクト先に遷移
+            return '/'; // デフォルトのリダイレクト先を変更する場合はここを変更
+        }
+    }
+    
     public function __construct()
     {
         $this->middleware('guest')->except('logout');

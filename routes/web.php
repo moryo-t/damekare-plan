@@ -2,6 +2,11 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MapController;
+use App\Http\Controllers\MapCreateController;
+
+
+use App\Http\Middleware\ReturnLocationMiddleware;
 
 use Illuminate\Http\Request;
 
@@ -20,6 +25,9 @@ use Illuminate\Http\Request;
 Route::get('/', 'App\Http\Controllers\FrontController@index');
 
 Route::get('/map', 'App\Http\Controllers\MapController@index');
+Route::post('/map/post/create', [MapController::class, 'post_create']);
+Route::post('/post-create', [MapController::class, 'post_create_result']);
+Route::post('/post-create/upload', [MapCreateController::class, 'post_create_upload']);
 
 Route::get('/posts', 'App\Http\Controllers\PostController@show');
 Route::get('/posts/{id}', 'App\Http\Controllers\PostController@detail');

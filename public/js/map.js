@@ -1,3 +1,6 @@
+let allPlaces = [];
+let allSetting = {};
+
 function initMap() {
     const directionsService = new google.maps.DirectionsService();
     const directionsRenderer = new google.maps.DirectionsRenderer({
@@ -8,7 +11,6 @@ function initMap() {
     
     var autocomplete;
     var map;
-    let allPlaces = [];
     var markers = [];
 
 
@@ -55,7 +57,7 @@ function initMap() {
 
     var options = {
         componentRestrictions: { country: "jp" },
-        fields: ["geometry", "formatted_address"],
+        fields: ["name", "geometry", "formatted_address", "opening_hours"],
         strictBounds: false,
         types: ["establishment"],
     };
@@ -74,14 +76,23 @@ function initMap() {
         inputEnd.disabled = false;
         inputEnd.placeholder = "終着場所を入力";
 
+        const firstName = firstPlace.name;
         const firstLatLang = firstPlace.geometry.location;
+        if (firstPlace.opening_hours) {
+            var firstOpening = firstPlace.opening_hours.weekday_text;
+        } else {
+            var firstOpening = null;
+        }
+
         const firstLocation = inputStart.value;
+
         allPlaces.push({
-            name: "S",
+            name: firstName,
+            pinName: "S",
             location: firstLocation,
             latLng: firstLatLang,
+            openingHours: firstOpening,
         });
-
 
         var mapOptions = {
             zoom: 16,
@@ -89,7 +100,7 @@ function initMap() {
         map = new google.maps.Map(document.getElementById('map'), mapOptions);
         map.setCenter(firstLatLang);
 
-        addMarker(firstLatLang, "S", map, infoWindow, firstLocation);
+        addMarker(firstName, firstLatLang, "S", map, infoWindow, firstLocation, firstOpening);
 
 
         var center = { lat: firstLatLang.lat(), lng: firstLatLang.lng() };
@@ -102,7 +113,7 @@ function initMap() {
         var newOptions = {
             bounds: defaultBounds,
             componentRestrictions: { country: "jp" },
-            fields: ["geometry", "formatted_address"],
+            fields: ["name", "geometry", "formatted_address", "opening_hours"],
             strictBounds: false,
             types: ["establishment"],
         };
@@ -111,8 +122,15 @@ function initMap() {
             autocomplete.addListener("place_changed", function() {
                 const place = this.getPlace();
                 if (place.geometry) {
+                    const placeName = place.name;
                     const latLng = place.geometry.location;
-                    const placeValue = input.value;
+                    const placeValue = input.value; 
+                    if (place.opening_hours) {
+                        var opening = place.opening_hours.weekday_text;
+                    } else {
+                        var opening = null;
+                    }
+                    
                     let isFound = false;
 
                     waypointCheck();
@@ -120,9 +138,11 @@ function initMap() {
                     switch (input.name) {
                         case "start":
                             for (let obj of allPlaces) {
-                                if (obj.name == "S") {
+                                if (obj.pinName == "S") {
+                                    obj.name = placeName;
                                     obj.location = placeValue;
                                     obj.latLng = latLng;
+                                    obj.openingHours = opening,
                                     isFound = true;
                                     break;
                                 }
@@ -130,9 +150,11 @@ function initMap() {
 
                             if (!isFound) {
                                 allPlaces.push({
-                                    name: "S",
+                                    name: placeName,
+                                    pinName: "S",
                                     location: placeValue,
                                     latLng: latLng,
+                                    openingHours: opening,
                                 });
                             }
                             break;
@@ -140,9 +162,11 @@ function initMap() {
 
                         case "end":
                             for (let obj of allPlaces) {
-                                if (obj.name == "E") {
+                                if (obj.pinName == "E") {
+                                    obj.name = placeName;
                                     obj.location = placeValue;
                                     obj.latLng = latLng;
+                                    obj.openingHours = opening,
                                     isFound = true;
                                     break;
                                 }
@@ -150,9 +174,11 @@ function initMap() {
 
                             if (!isFound) {
                                 allPlaces.push({
-                                    name: "E",
+                                    name: placeName,
+                                    pinName: "E",
                                     location: placeValue,
                                     latLng: latLng,
+                                    openingHours: opening,
                                 });
                             }
                             break;
@@ -160,9 +186,11 @@ function initMap() {
 
                         case "place1":
                             for (let obj of allPlaces) {
-                                if (obj.name == "1") {
+                                if (obj.pinName == "1") {
+                                    obj.name = placeName;
                                     obj.location = placeValue;
                                     obj.latLng = latLng;
+                                    obj.openingHours = opening,
                                     isFound = true;
                                     break;
                                 }
@@ -170,9 +198,11 @@ function initMap() {
 
                             if (!isFound) {
                                 allPlaces.push({
-                                    name: "1",
+                                    name: placeName,
+                                    pinName: "1",
                                     location: placeValue,
                                     latLng: latLng,
+                                    openingHours: opening,
                                 });
                             }
                             break;
@@ -180,9 +210,11 @@ function initMap() {
 
                         case "place2":
                             for (let obj of allPlaces) {
-                                if (obj.name == "2") {
+                                if (obj.pinName == "2") {
+                                    obj.name = placeName;
                                     obj.location = placeValue;
                                     obj.latLng = latLng;
+                                    obj.openingHours = opening,
                                     isFound = true;
                                     break;
                                 }
@@ -190,9 +222,11 @@ function initMap() {
 
                             if (!isFound) {
                                 allPlaces.push({
-                                    name: "2",
+                                    name: placeName,
+                                    pinName: "2",
                                     location: placeValue,
                                     latLng: latLng,
+                                    openingHours: opening,
                                 });
                             }
                             break;
@@ -200,9 +234,11 @@ function initMap() {
 
                         case "place3":
                             for (let obj of allPlaces) {
-                                if (obj.name == "3") {
+                                if (obj.pinName == "3") {
+                                    obj.name = placeName;
                                     obj.location = placeValue;
                                     obj.latLng = latLng;
+                                    obj.openingHours = opening,
                                     isFound = true;
                                     break;
                                 }
@@ -210,9 +246,11 @@ function initMap() {
 
                             if (!isFound) {
                                 allPlaces.push({
-                                    name: "3",
+                                    name: placeName,
+                                    pinName: "3",
                                     location: placeValue,
                                     latLng: latLng,
+                                    openingHours: opening,
                                 });
                             }
                             break;
@@ -220,9 +258,11 @@ function initMap() {
 
                         case "place4":
                             for (let obj of allPlaces) {
-                                if (obj.name == "4") {
+                                if (obj.pinName == "4") {
+                                    obj.name = placeName;
                                     obj.location = placeValue;
                                     obj.latLng = latLng;
+                                    obj.openingHours = opening,
                                     isFound = true;
                                     break;
                                 }
@@ -230,9 +270,11 @@ function initMap() {
 
                             if (!isFound) {
                                 allPlaces.push({
-                                    name: "4",
+                                    name: placeName,
+                                    pinName: "4",
                                     location: placeValue,
                                     latLng: latLng,
+                                    openingHours: opening,
                                 });
                             }
                             break;
@@ -240,9 +282,11 @@ function initMap() {
 
                         case "place5":
                             for (let obj of allPlaces) {
-                                if (obj.name == "5") {
+                                if (obj.pinName == "5") {
+                                    obj.name = placeName;
                                     obj.location = placeValue;
                                     obj.latLng = latLng;
+                                    obj.openingHours = opening,
                                     isFound = true;
                                     break;
                                 }
@@ -250,9 +294,11 @@ function initMap() {
 
                             if (!isFound) {
                                 allPlaces.push({
-                                    name: "5",
+                                    name: placeName,
+                                    pinName: "5",
                                     location: placeValue,
                                     latLng: latLng,
+                                    openingHours: opening,
                                 });
                             }
                             break;
@@ -261,16 +307,16 @@ function initMap() {
                     switch (input.name) {
                         case "start":
                             for (let i = 0; i < allPlaces.length; i++) {
-                                if (allPlaces[i].name == "S") {
-                                    removeMarkers(allPlaces[i].name);
+                                if (allPlaces[i].pinName == "S") {
+                                    removeMarkers(allPlaces[i].pinName);
                                     allPlaces.splice(i, 1);
                                     break;
                                 }
                             }
                         case "end":
                             for (let i = 0; i < allPlaces.length; i++) {
-                                if (allPlaces[i].name == "E") {
-                                    removeMarkers(allPlaces[i].name);
+                                if (allPlaces[i].pinName == "E") {
+                                    removeMarkers(allPlaces[i].pinName);
                                     allPlaces.splice(i, 1);
                                     break;
                                 }
@@ -278,8 +324,8 @@ function initMap() {
                             break;
                         case "place1":
                             for (let i = 0; i < allPlaces.length; i++) {
-                                if (allPlaces[i].name == "1") {
-                                    removeMarkers(allPlaces[i].name);
+                                if (allPlaces[i].pinName == "1") {
+                                    removeMarkers(allPlaces[i].pinName);
                                     allPlaces.splice(i, 1);
                                     break;
                                 }
@@ -287,8 +333,8 @@ function initMap() {
                             break;
                         case "place2":
                             for (let i = 0; i < allPlaces.length; i++) {
-                                if (allPlaces[i].name == "2") {
-                                    removeMarkers(allPlaces[i].name);
+                                if (allPlaces[i].pinName == "2") {
+                                    removeMarkers(allPlaces[i].pinName);
                                     allPlaces.splice(i, 1);
                                     break;
                                 }
@@ -296,8 +342,8 @@ function initMap() {
                             break;
                         case "place3":
                             for (let i = 0; i < allPlaces.length; i++) {
-                                if (allPlaces[i].name == "3") {
-                                    removeMarkers(allPlaces[i].name);
+                                if (allPlaces[i].pinName == "3") {
+                                    removeMarkers(allPlaces[i].pinName);
                                     allPlaces.splice(i, 1);
                                     break;
                                 }
@@ -305,8 +351,8 @@ function initMap() {
                             break;
                         case "place4":
                             for (let i = 0; i < allPlaces.length; i++) {
-                                if (allPlaces[i].name == "4") {
-                                    removeMarkers(allPlaces[i].name);
+                                if (allPlaces[i].pinName == "4") {
+                                    removeMarkers(allPlaces[i].pinName);
                                     allPlaces.splice(i, 1);
                                     break;
                                 }
@@ -314,8 +360,8 @@ function initMap() {
                             break;
                         case "place5":
                             for (let i = 0; i < allPlaces.length; i++) {
-                                if (allPlaces[i].name == "5") {
-                                    removeMarkers(allPlaces[i].name);
+                                if (allPlaces[i].pinName == "5") {
+                                    removeMarkers(allPlaces[i].pinName);
                                     allPlaces.splice(i, 1);
                                     break;
                                 }
@@ -346,7 +392,7 @@ function initMap() {
 
         const waypointsArr = [];
         for (let obj of places) {
-            if (obj.name !== "S" && obj.name !== "E") {
+            if (obj.pinName !== "S" && obj.pinName !== "E") {
                 waypointsArr.push({
                     location: obj.location,
                     stopover: true,
@@ -379,17 +425,35 @@ function initMap() {
                     eleDuration.textContent = "移動時間 " + durationFormatted;
                 }
 
+                allSetting.duration = durationSum;
+                allSetting.travelMode = request['travelMode'];
+                
                 for (obj of places) {
-                    addMarker(obj.latLng, obj.name, map, infoWindow, obj.location);
+                    addMarker(obj.name, obj.latLng, obj.pinName, map, infoWindow, obj.location, obj.openingHours);
                 }
             }
         });
     }
 
 
-    function addMarker(location, label, map, info, content) {
+    function addMarker(name, location, label, map, info, content, opening) {
 
         removeMarkers(label);
+
+        let location_content = `
+            <h5>${name}</h5>
+            <div class="d-flex align-items-center">
+                ${content}
+            </div>
+        `;
+
+        if (opening !== null) {
+            let openingWeek = opening.join('<br>');
+            location_content += `
+                <div class="pt-3">営業時間</div>
+                <div>${openingWeek}</div>
+            `;
+        }
 
         var marker = new google.maps.Marker({
             position: location,
@@ -398,7 +462,7 @@ function initMap() {
         });
 
         marker.addListener('click', function() {
-            info.setContent(content);
+            info.setContent(location_content);
             info.open(map, this);
         }, {passive: true});
 

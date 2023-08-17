@@ -3,7 +3,7 @@
     <link href="{{ asset('css/right-arrow.css') }}" rel="stylesheet">
 </head>
 
-<div id="header" class="position-fixed w-100 top-0">
+<div id="app" class="position-fixed w-100 top-0 header">
     <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
         <div class="container">
             <a class="navbar-brand" href="{{ url('/') }}">

@@ -1,10 +1,24 @@
+html, body {
+    height: 100%;
+}
+
 #map {
     height: 100%;
-    width: 100%
+    width: 100%;
 }
+
+#mapResCheck {
+    height: 100%;
+    padding-left: 400px;
+    transition-duration: .5s;
+}
+#mapResCheck.close {
+    padding-left: 0;
+}
+
 main {
     width: 400px;
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     margin: 0;
@@ -233,6 +247,13 @@ label {
     display: flex !important;
 }
 
+.title {
+    border: none;
+    outline: none;
+    border-bottom: 1.5px solid #757590;
+    padding: 5px 5px;
+}
+
 @media screen and (max-width: 800px) {
 	main {
         width: 350px;
@@ -249,6 +270,11 @@ label {
         left: -350px;
         transition-duration: .5s;
     }
+
+    #mapResCheck {
+        padding-left: 350px;
+    }
+
     .btn-plan {
         display: inline-block;
         color: #3C4042;
@@ -293,6 +319,10 @@ label {
         left: 0;
         right: 0;
         transition-duration: .5s;
+    }
+
+    #mapResCheck {
+        padding-left: 0;
     }
     .btn-plan {
         display: inline-block;

@@ -10,6 +10,6 @@ main {
     padding-top: 55px;
 }
 
-#header {
+.header {
     z-index: 2;
 }

@@ -4,7 +4,6 @@
 
 <head>
     <link rel="stylesheet" href="{{ asset('css/search.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/bg-img.css') }}">
 </head>
 
 @section('header')

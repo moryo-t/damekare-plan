@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\ChatRequest;
 use App\Models\Post;
 use App\Models\User;
 use App\Models\Chat;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class SearchController extends Controller
 {
@@ -19,7 +21,8 @@ class SearchController extends Controller
     public function show(Request $request)
     {
         $input = $request->input_result;
-        $posts = Post::latest()
+        $posts = Post::with('images')
+        ->latest()
         ->where('title', 'like', '%' . $input . '%')
         ->orWhere('start', 'like', '%' . $input . '%')
         ->orWhere('end', 'like', '%' . $input . '%')
@@ -30,6 +33,12 @@ class SearchController extends Controller
         ->orWhere('place5', 'like', '%' . $input . '%')
         ->paginate(15);
 
+        foreach ($posts as $post) {
+            foreach ($post->images as $image) {
+                
+                Log::debug(Storage::disk('s3')->get($image->file_path));
+            }
+        }
         return view('blade.search-result', ['posts' => $posts, 'input' => $input]);
     }
 

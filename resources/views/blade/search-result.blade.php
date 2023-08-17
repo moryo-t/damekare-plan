@@ -11,7 +11,7 @@
 @endsection
 
 @section('main')
-    <div class="container mx-auto mt-3 mb-5">
+    <div class="container mt-3 mb-5">
         <h2 class="mb-3">「{{ $input }}」で検索した結果</h2>
         @if(!isset($posts[0]))
             <div class="position-absolute top-50 start-50 none-search">
@@ -22,6 +22,21 @@
                 </div>    
             </div>
         @endif
+        
+        <div class="row">
+            @foreach ($posts as $post)
+                @csrf
+                <div class="col-4 post-block-style">
+                    <div class="border-style rounded shadow-sm bg-white">
+                        @foreach ($post->images as $image)
+                            <img src="{{ Storage::disk('s3')->url($image->file_path) }}" alt="" width="100%">
+                            aaaa
+                        @endforeach
+                    </div>
+                </div>
+            @endforeach
+        </div>
+        
         <ul class="list-group">
             @foreach($posts as $post)
                 @csrf
