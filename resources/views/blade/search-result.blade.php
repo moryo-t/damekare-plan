@@ -26,46 +26,25 @@
         <div class="row">
             @foreach ($posts as $post)
                 @csrf
-                <div class="col-4 post-block-style">
-                    <div class="border-style rounded shadow-sm bg-white">
-                        @foreach ($post->images as $image)
-                            <img src="{{ Storage::disk('s3')->url($image->file_path) }}" alt="" width="100%">
-                            aaaa
-                        @endforeach
-                    </div>
+                <div class="col-lg-4 col-6 px-1 pb-1 align-self-start">
+                    <a href="/search/detail?id={{ $post->id }}" class="">
+                        <div class="border-style rounded shadow-sm bg-white">
+                            @if ($post->images->count() > 0)
+                                <img src="{{ Storage::disk('s3')->url($post->images[0]->file_path) }}" alt="image" width="100%" class="img-style">
+                                <div class="m-2">
+                                    <div class="fs-5 fw-bolder">{{ $post->title }}</div>
+                                    <div class="text-secondary">{{ $post->user->name }}</div>
+                                </div>
+                            @else
+                                <img src="{{ asset('img/no_image_square.jpg')}}" alt="No image">
+                            @endif
+                        </div>
+                    </a>
                 </div>
             @endforeach
         </div>
-        
-        <ul class="list-group">
-            @foreach($posts as $post)
-                @csrf
-                <a href="/search/detail?id={{ $post->id }}">
-                    <li class="list-group-item">
-                        <h5>{{ $post->title }}</h5>
-                        <div class="d-flex flex-wrap">
-                            <div>{{ $post->getStart() }}</div>
-                            @if(!empty($post->place1))
-                                <div class="arrow arrow-obj">{{ $post->getPlace1() }}</div>
-                            @endif
-                            @if(!empty($post->place2))
-                                <div class="arrow arrow-obj">{{ $post->getPlace2() }}</div>
-                            @endif
-                            @if(!empty($post->place3))
-                                <div class="arrow arrow-obj">{{ $post->getPlace3() }}</div>
-                            @endif
-                            @if(!empty($post->place4))
-                                <div class="arrow arrow-obj">{{ $post->getPlace4() }}</div>
-                            @endif
-                            @if(!empty($post->place5))
-                                <div class="arrow arrow-obj">{{ $post->getPlace5() }}</div>
-                            @endif
-                            <div class="arrow arrow-obj">{{ $post->getEnd() }}</div>
-                        </div>
-                    </li>
-                </a>
-            @endforeach
-            <div class="mt-2">
+
+        <div class="mt-2">
                 {{ $posts->links() }}
             </div>
         </ul>    
@@ -73,5 +52,6 @@
 @endsection
 
 @section('script')
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script defer src="{{ asset('js/app.js') }}"></script>
+    <script defer src="{{ asset('js/screen-resize.js') }}"></script>
 @endsection

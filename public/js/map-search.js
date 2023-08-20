@@ -1,4 +1,23 @@
-function initMap() {
+const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+const searchParams = new URLSearchParams(window.location.search);
+const queryPost = searchParams.get('id');
+fetch ('/map-data/' + queryPost, {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+        'X-CSRF-TOKEN': csrfToken,
+    }
+})
+.then((response) => {
+    return response.json();
+})
+.then((data) => {
+    initMap(data['map-data']);
+})
+
+function initMap(mapData) {
+    console.log(mapData);
+
     const directionsService = new google.maps.DirectionsService();
     const directionsRenderer = new google.maps.DirectionsRenderer({
         suppressMarkers: true,
@@ -11,8 +30,8 @@ function initMap() {
 
     var allPlaces = [];
 
-    const mapData = window.mapData;
-    const mapDataParsed = JSON.parse(mapData);
+    const mapsData = window.mapData;
+    const mapDataParsed = JSON.parse(mapsData);
     const dataShaping = mapDataParsed[0];
     const mapDataKeep = ["start", "end", "place1", "place2", "place3", "place4", "place5"];
 

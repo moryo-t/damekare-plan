@@ -61,10 +61,18 @@
 .border-style {
     border: 1px solid #DFDFDF;
 }
-.post-block-style {
-    padding: 0 1px;
-}
 
+
+.img-style {
+    object-fit: cover;
+}
+a {
+    text-decoration: none;
+    color: #000;
+}
+a:hover {
+    color: #000;
+}
 @media screen and (max-width: 992px) {
     .arrow_blue {
         position: relative;

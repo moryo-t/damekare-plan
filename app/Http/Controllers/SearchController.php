@@ -21,7 +21,7 @@ class SearchController extends Controller
     public function show(Request $request)
     {
         $input = $request->input_result;
-        $posts = Post::with('images')
+        $posts = Post::with(['images', 'user'])
         ->latest()
         ->where('title', 'like', '%' . $input . '%')
         ->orWhere('start', 'like', '%' . $input . '%')
@@ -33,21 +33,22 @@ class SearchController extends Controller
         ->orWhere('place5', 'like', '%' . $input . '%')
         ->paginate(15);
 
-        foreach ($posts as $post) {
-            foreach ($post->images as $image) {
-                
-                Log::debug(Storage::disk('s3')->get($image->file_path));
-            }
-        }
         return view('blade.search-result', ['posts' => $posts, 'input' => $input]);
     }
 
     public function detail(Request $request)
     {
         $id = $request->id;
-        $items = Post::with('chats')->where('id', $id)->get();
+        $items = Post::with(['images', 'chats'])->where('id', $id)->get();
         echo "<script>window.mapData = '$items';</script>";
         return view('blade.search-detail', ['items' => $items]);
+    }
+
+    public function map_data(Request $request)
+    {
+        $id = $request->id;
+        $items = Post::where('id', $id)->get();
+        return response(['map-data' => $items]);
     }
 
     public function edit_title($id, Request $request)

@@ -412,7 +412,7 @@ function initMap() {
                     let durationTime = obj.duration.value;
                     durationSum += durationTime;
                 }
-
+ 
                 const durationHours = Math.floor(durationSum / 3600);
                 const durationMin = Math.floor((durationSum % 3600) / 60);
 
